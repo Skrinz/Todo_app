@@ -1,32 +1,34 @@
-# Todo_app
+# **Todo App – Server Setup**
 
----
-
-## <strong>Server Setup in vs code<strong>
-
+## **Setting Up the Server in VS Code**  
+Run the following commands to set up the server:  
+```sh
 cd todo_server
 npm install
+```
 
-## Specifics packages installed:
+## **Installed Packages**  
+These packages are required for the project:  
+```sh
+npm install express bcrypt express-validator cors
+```
 
-npm install express
-npm install bcrypt
-npm install express-validator
-npm install cors
+## **etting Up Prisma**  
 
-<strong>Setup Prisma</strong>
-
---Include Prisma only in development and not in production --
+### **Install Prisma (for development only)**  
+```sh
 npm install prisma --save-dev
+```
 
---Setting up Prisma for the first time in project--
-npx prisma init
-
---If editing the schema, run this to migrate the schema--
+### **Apply Database Migrations**  
+If you modify the Prisma schema, run:  
+```sh
 npx prisma migrate dev --name <migration_name>
+```
 
---------------Extensions-------------------
-Prisma
-sqlite
-sqlite viewer
-devdb
+## **Recommended VS Code Extensions**  
+To enhance development, install the following extensions:  
+- **Prisma** – For Prisma ORM support
+- **SQLite** – To work with SQLite databases
+- **SQLite Viewer** – For viewing database content
+- **DevDB** – Database management tool
