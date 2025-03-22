@@ -32,26 +32,28 @@ const registerUser = async (username, email, password) => {
 
 //login user
 const loginUser = async (email, password) => {
-    try{
-        const user = await prisma.user.findUnique({
-            where: {
-                email
-            }
-        })
-        if(!user) return false; //User not found
 
-        //Compare the provided password with the hashed password stored in the database
-        const passwordMatch = await bcrypt.compare(password, user.password);
+  const user = await prisma.user.findUnique({
+      where: {
+        email
+      }
+  })
 
-        if (!passwordMatch) return false; //Password does not match
+  //If user is not found
+  if(!user){
+    throw new Error("User not found");
+  } 
 
-        //Return the user if the password matches
-        return user;
+  //Compare the provided password with the hashed password stored in the database
+  const passwordMatch = await bcrypt.compare(password, user.password);
 
-    }catch(error){
-        console.error(error);
-        return false;
-    }
+  //Password does not match
+  if (!passwordMatch){
+    throw new Error("Password does not match");
+  }
+
+  //Return the user if the password matches
+  return user;
 };
 
 module.exports = {

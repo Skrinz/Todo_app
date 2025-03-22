@@ -36,6 +36,14 @@ const loginController = async (req, res) => {
     res.status(200).json(user);
 
   } catch (error) {
+    
+    //if user is not found or password does not match
+    if (error.message === "User not found") {
+      return res.status(404).json({ message: error.message });
+    }else if (error.message === "Password does not match") {
+      return res.status(401).json({ message: error.message });
+    }
+
     //unknown error
     console.error(error);
     res.status(500).json({ message: "Something went wrong during login" });
