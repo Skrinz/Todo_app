@@ -8,7 +8,7 @@ const registerController = async (req, res) => {
     const user = await userService.registerUser(username, email, password);
 
     //if registration is successful
-    res.status(201).json(user);
+    res.status(201).json({user:user});
 
   } catch (error) {
 
@@ -19,9 +19,7 @@ const registerController = async (req, res) => {
 
     //unknown error
     console.error(error);
-    res
-      .status(500)
-      .json({ message: "Something went wrong during registration" });
+    res.status(500).json({ message: "Something went wrong during registration" });
   }
 };
 
@@ -33,7 +31,7 @@ const loginController = async (req, res) => {
     const user = await userService.loginUser(email, password);
 
     //if login is successful
-    res.status(200).json(user);
+    res.status(200).json({user:user});
 
   } catch (error) {
     

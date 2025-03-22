@@ -3,14 +3,16 @@ const { body, validationResult } = require("express-validator");
 const registerValidation = [
   body("username").notEmpty().withMessage("Username is required"),
   body("email").isEmail().withMessage("Invalid email format"),
-  body("password")
-    .isLength({ min: 8 })
-    .withMessage("Password must be at least 8 characters"),
+  body("password").isLength({ min: 8 }).withMessage("Password must be at least 8 characters"),
 ];
 
 const loginValidation = [
   body("email").isEmail().withMessage("Invalid email format"),
   body("password").notEmpty().withMessage("Password is required"),
+];
+
+const todoValidation = [
+  body("title").notEmpty().withMessage("Title is required"),
 ];
 
 const validate = (req, res, next) => {
@@ -33,5 +35,6 @@ const validate = (req, res, next) => {
 module.exports = {
   registerValidation,
   loginValidation,
+  todoValidation,
   validate,
 };
