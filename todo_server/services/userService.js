@@ -12,7 +12,7 @@ const registerUser = async (username, email, password) => {
     },
   });
   if (existingUser) {
-    console.error("Email already exists");
+    throw new Error("Email already exists");
   }
 
   //hash password

@@ -13,7 +13,7 @@ These packages are required for the project:
 npm install express bcrypt express-validator cors
 ```
 
-## **etting Up Prisma**  
+## **Setting Up Prisma**  
 
 ### **Install Prisma (for development only)**  
 ```sh
