@@ -67,7 +67,7 @@ To enhance development, install:
 
 #### **Delete a Todo**  
 **Endpoint:** `DELETE URL/todos/{todoId}`  
-**Response:** Deletes the specified todo task.  
+**Response:** Returns Deleted specified todo task.  
 
 ---
 
