@@ -37,7 +37,7 @@ To enhance development, install:
 
 ### **📝 Todos**  
 
-#### ** Create a Todo**  
+#### **✅ Create a Todo**  
 **Endpoint:** `POST /todos/`  
 **Request Body:**  
 ```json
@@ -67,7 +67,7 @@ To enhance development, install:
 
 #### **Delete a Todo**  
 **Endpoint:** `DELETE URL/todos/{todoId}`  
-**Response:** Returns deleted specified todo task.  
+**Response:** Returns Deleted specified todo task.  
 
 ---
 
