@@ -49,12 +49,12 @@ To enhance development, install:
 ```
 **Response:** Returns the created todo task.  
 
-#### **📋 Get All Todos**  
-**Endpoint:** `GET /todos?userId={userId}`  
+#### **Get All Todos**  
+**Endpoint:** `GET URL/todos?userId={userId}`  
 **Response:** Returns all todo tasks associated with the specified `userId`.  
 
-#### **✏️ Update a Todo** *(Requires Discussion on Access Control)*  
-**Endpoint:** `PATCH /todos/{todoId}`  
+#### **Update a Todo** *(Requires Discussion on Access Control)*  
+**Endpoint:** `PATCH URL/todos/{todoId}`  
 **Request Body:** *(Include only fields that need updating)*  
 ```json
 {
@@ -65,16 +65,16 @@ To enhance development, install:
 ```
 **Response:** Returns the updated todo task.  
 
-#### **🗑️ Delete a Todo**  
-**Endpoint:** `DELETE /todos/{todoId}`  
+#### **Delete a Todo**  
+**Endpoint:** `DELETE URL/todos/{todoId}`  
 **Response:** Deletes the specified todo task.  
 
 ---
 
 ### **👤 Users**  
 
-#### **📝 Register a User**  
-**Endpoint:** `POST /users/register`  
+#### **Register a User**  
+**Endpoint:** `POST URL/users/register`  
 **Request Body:**  
 ```json
 {
@@ -85,8 +85,8 @@ To enhance development, install:
 ```
 **Response:** Returns the newly created user.  
 
-#### **🔑 Login a User**  
-**Endpoint:** `POST /users/login`  
+#### **Login a User**  
+**Endpoint:** `POST URL/users/login`  
 **Request Body:**  
 ```json
 {
