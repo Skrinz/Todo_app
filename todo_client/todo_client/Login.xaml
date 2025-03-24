@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="todo_client.Login">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout
+                BackgroundColor="#101825"
+                Margin="0">
+                
+                <!-- Header Logo -->
+                <Image x:Name="LogoImage" Source="todo_logo.png" HorizontalOptions="Center" VerticalOptions="Center"
+                       Scale="0.5"
+                       Margin="0, 100, 0, -80"/>
+        
+                <!-- Email Input -->
+                <Border Margin="30,20"
+                        Stroke="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5"/>
+                    </Border.StrokeShape>
+                    <Grid RowDefinitions="*"
+                          ColumnDefinitions="50, Auto, *"
+                          BackgroundColor="White">
+                        <!-- Email Logo -->
+                        <Image x:Name="EmailIcon" 
+                               Source="email_icon.svg" 
+                               Aspect="AspectFit"
+                               VerticalOptions="Center"
+                               Margin="10,0"
+                               Grid.Column="0" />
+                        <!-- Vertical Divider -->
+                        <BoxView x:Name="EntryDivider" 
+                                 BackgroundColor="Gray" 
+                                 WidthRequest="1" 
+                                 VerticalOptions="Fill"
+                                 Margin="0,5"
+                                 Grid.Column="1" />
+                        <!-- Entry Field -->
+                        <Entry x:Name="EmailEntry"
+                               Placeholder="Email Address"
+                               PlaceholderColor="#a4adb6"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Center"
+                               TextColor="Black"
+                               Grid.Column="2"/>
+                    </Grid>
+                </Border>
+
+                <!-- Password Input -->
+                <Border Margin="30,-10"
+                        Stroke="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5"/>
+                    </Border.StrokeShape>
+                    <Grid RowDefinitions="*"
+                          ColumnDefinitions="50, Auto, *"
+                          BackgroundColor="White">
+                        <!-- Password Logo -->
+                        <Image x:Name="PasswordIcon" 
+                               Source="password_icon.svg" 
+                               Aspect="AspectFit"
+                               VerticalOptions="Center"
+                               Margin="10,0"
+                               Grid.Column="0" />
+                        <!-- Vertical Divider -->
+                        <BoxView x:Name="PasswordDivider" 
+                                 BackgroundColor="Gray" 
+                                 WidthRequest="1" 
+                                 VerticalOptions="Fill"
+                                 Margin="0,5"
+                                 Grid.Column="1" />
+                        <!-- Entry Field -->
+                        <Entry x:Name="PasswordEntry"
+                               Placeholder="Password"
+                               PlaceholderColor="#a4adb6"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Center"
+                               TextColor="Black"
+                               IsPassword="True"
+                               Grid.Column="2"/>
+                    </Grid>
+                </Border>
+                
+                <!-- Sign in button -->
+                <Border Margin="30, 20"
+                        BackgroundColor="Transparent"
+                        Stroke="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5"/>
+                    </Border.StrokeShape>
+                    
+                    <Button
+                        Text="Sign in"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        BackgroundColor="#a4a757"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"/>
+                </Border>
+                
+                <!-- Sign up button -->
+                <Border Margin="30, -10"
+                        BackgroundColor="Transparent"
+                        Stroke="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5"/>
+                    </Border.StrokeShape>
+                    
+                    <Button
+                        Text="Sign up"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        BackgroundColor="#a4adb6"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Clicked="SignUp_OnClicked"/>
+                </Border>
+                
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

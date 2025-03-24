@@ -10,6 +10,9 @@ public class MainActivity
 	public static final String __md_methods;
 	static {
 		__md_methods = 
+			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
+			"n_onResume:()V:GetOnResumeHandler\n" +
+			"n_onWindowFocusChanged:(Z)V:GetOnWindowFocusChanged_ZHandler\n" +
 			"";
 		mono.android.Runtime.register ("todo_client.MainActivity, todo_client", MainActivity.class, __md_methods);
 	}
@@ -29,6 +32,27 @@ public class MainActivity
 			mono.android.TypeManager.Activate ("todo_client.MainActivity, todo_client", "System.Int32, System.Private.CoreLib", this, new java.lang.Object[] { p0 });
 		}
 	}
+
+	public void onCreate (android.os.Bundle p0)
+	{
+		n_onCreate (p0);
+	}
+
+	private native void n_onCreate (android.os.Bundle p0);
+
+	public void onResume ()
+	{
+		n_onResume ();
+	}
+
+	private native void n_onResume ();
+
+	public void onWindowFocusChanged (boolean p0)
+	{
+		n_onWindowFocusChanged (p0);
+	}
+
+	private native void n_onWindowFocusChanged (boolean p0);
 
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)

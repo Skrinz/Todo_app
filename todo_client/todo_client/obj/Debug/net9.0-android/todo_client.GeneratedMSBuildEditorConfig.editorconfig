@@ -24,17 +24,17 @@ build_metadata.AdditionalFiles.ManifestResourceName = todo_client.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/AppShell.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/Login.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = todo_client.AppShell.xaml
-build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
-build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = todo_client.Login.xaml
+build_metadata.AdditionalFiles.TargetPath = Login.xaml
+build_metadata.AdditionalFiles.RelativePath = Login.xaml
 
-[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/MainPage.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/Register.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = todo_client.MainPage.xaml
-build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
-build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = todo_client.Register.xaml
+build_metadata.AdditionalFiles.TargetPath = Register.xaml
+build_metadata.AdditionalFiles.RelativePath = Register.xaml
 
 [C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
