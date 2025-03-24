@@ -1,6 +1,6 @@
-# **Todo App – Server Setup**  
+# **🚀 Todo App – Server Setup**  
 
-## **Getting Started**  
+## **🛠️ Getting Started**  
 Follow these steps to set up and run the server in **VS Code**:  
 
 ```sh
@@ -8,7 +8,7 @@ cd todo_server
 npm install
 ```
 
-### **Apply Database Migrations**  
+### **🔄 Apply Database Migrations**  
 If you modify the Prisma schema, run:  
 ```sh
 npx prisma migrate dev --name <migration_name>
@@ -16,7 +16,7 @@ npx prisma migrate dev --name <migration_name>
 
 ---
 
-## **Installed Dependencies**  
+## **📦 Installed Dependencies**  
 Ensure the following packages are installed:  
 ```sh
 npm install express bcrypt express-validator cors
@@ -24,7 +24,7 @@ npm install express bcrypt express-validator cors
 
 ---
 
-## **Recommended VS Code Extensions**  
+## **💡 Recommended VS Code Extensions**  
 To enhance development, install:  
 - **Prisma** – ORM support  
 - **SQLite** – SQLite database management  
@@ -33,12 +33,12 @@ To enhance development, install:
 
 ---
 
-## **API Endpoints**  
+## **📌 API Endpoints**  
 
-### **Todos**  
+### **📝 Todos**  
 
-#### **Create a Todo**  
-**Endpoint:** `POST URL/todos/`  
+#### **✅ Create a Todo**  
+**Endpoint:** `POST /todos/`  
 **Request Body:**  
 ```json
 {
@@ -49,12 +49,12 @@ To enhance development, install:
 ```
 **Response:** Returns the created todo task.  
 
-#### **Get All Todos**  
-**Endpoint:** `GET URL/todos?userId={userId}`  
+#### **📋 Get All Todos**  
+**Endpoint:** `GET /todos?userId={userId}`  
 **Response:** Returns all todo tasks associated with the specified `userId`.  
 
-#### **Update a Todo** *(Requires Discussion on Access Control)*  
-**Endpoint:** `PATCH URL/todos/{todoId}`  
+#### **✏️ Update a Todo** *(Requires Discussion on Access Control)*  
+**Endpoint:** `PATCH /todos/{todoId}`  
 **Request Body:** *(Include only fields that need updating)*  
 ```json
 {
@@ -65,16 +65,16 @@ To enhance development, install:
 ```
 **Response:** Returns the updated todo task.  
 
-#### **Delete a Todo**  
-**Endpoint:** `DELETE URL/todos/{todoId}`  
+#### **🗑️ Delete a Todo**  
+**Endpoint:** `DELETE /todos/{todoId}`  
 **Response:** Deletes the specified todo task.  
 
 ---
 
-### **Users**  
+### **👤 Users**  
 
-#### **Register a User**  
-**Endpoint:** `POST URL/users/register`  
+#### **📝 Register a User**  
+**Endpoint:** `POST /users/register`  
 **Request Body:**  
 ```json
 {
@@ -85,8 +85,8 @@ To enhance development, install:
 ```
 **Response:** Returns the newly created user.  
 
-#### **Login a User**  
-**Endpoint:** `POST URL/users/login`  
+#### **🔑 Login a User**  
+**Endpoint:** `POST /users/login`  
 **Request Body:**  
 ```json
 {
@@ -95,4 +95,3 @@ To enhance development, install:
 }
 ```
 **Response:** Returns user details upon successful login.
-
