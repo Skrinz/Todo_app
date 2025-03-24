@@ -1,31 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\RiderProjects\\Todo_app\\todo_client\\todo_client\\todo_client.csproj": {}
+    "C:\\Users\\Veekey\\Documents\\Programming\\Mobile Development\\MAUI\\Todo_app\\todo_client\\todo_client\\todo_client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\RiderProjects\\Todo_app\\todo_client\\todo_client\\todo_client.csproj": {
+    "C:\\Users\\Veekey\\Documents\\Programming\\Mobile Development\\MAUI\\Todo_app\\todo_client\\todo_client\\todo_client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\RiderProjects\\Todo_app\\todo_client\\todo_client\\todo_client.csproj",
+        "projectUniqueName": "C:\\Users\\Veekey\\Documents\\Programming\\Mobile Development\\MAUI\\Todo_app\\todo_client\\todo_client\\todo_client.csproj",
         "projectName": "todo_client",
-        "projectPath": "C:\\Users\\User\\RiderProjects\\Todo_app\\todo_client\\todo_client\\todo_client.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\RiderProjects\\Todo_app\\todo_client\\todo_client\\obj\\",
+        "projectPath": "C:\\Users\\Veekey\\Documents\\Programming\\Mobile Development\\MAUI\\Todo_app\\todo_client\\todo_client\\todo_client.csproj",
+        "packagesPath": "C:\\Users\\Veekey\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Veekey\\Documents\\Programming\\Mobile Development\\MAUI\\Todo_app\\todo_client\\todo_client\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Veekey\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0-android",
           "net9.0-windows10.0.19041.0"
         ],
         "sources": {
+          "C:\\Users\\Veekey\\.dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0-android": {
+          "net9.0-android35.0": {
             "targetAlias": "net9.0-android",
             "projectReferences": {}
           },
@@ -43,10 +44,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
-        "net9.0-android": {
+        "net9.0-android35.0": {
           "targetAlias": "net9.0-android",
           "dependencies": {
             "Microsoft.Extensions.Logging.Debug": {
@@ -55,7 +57,13 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[9.0.14, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.2, )",
+              "autoReferenced": true
             }
           },
           "imports": [
@@ -70,11 +78,14 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.Android": {
+              "privateAssets": "all"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Veekey\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         },
         "net9.0-windows10.0.19041": {
           "targetAlias": "net9.0-windows10.0.19041.0",
@@ -85,7 +96,7 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[9.0.14, )"
             }
           },
           "imports": [
@@ -99,15 +110,32 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.Windows.SDK.NET.Ref",
+              "version": "[10.0.19041.57, 10.0.19041.57]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             },
-            "Microsoft.Windows.SDK.NET.Ref": {
+            "Microsoft.Windows.SDK.NET.Ref.Windows": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Veekey\\.dotnet\\sdk\\9.0.200\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "android-arm64": {
+          "#import": []
+        },
+        "android-x64": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
         }
       }
     }
