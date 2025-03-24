@@ -37,7 +37,7 @@ To enhance development, install:
 
 ### **Todos**  
 
-<fond color="red">#### **Create a Todo**</font>  
+<font color="red">#### **Create a Todo**</font>  
 **Endpoint:** `POST URL/todos/`  
 **Request Body:**  
 ```json
@@ -49,11 +49,11 @@ To enhance development, install:
 ```
 **Response:** Returns the created todo task.  
 
-<fond color="red">#### **Get All Todos**  </font>  
+<font color="red">#### **Get All Todos**  </font>  
 **Endpoint:** `GET URL/todos?userId={userId}`  
 **Response:** Returns all todo tasks associated with the specified `userId`.  
 
-<fond color="red">#### **Update a Todo** *(Requires Discussion on Access Control)*  </font>   
+<font color="red">#### **Update a Todo** *(Requires Discussion on Access Control)*  </font>   
 **Endpoint:** `PATCH URL/todos/{todoId}`  
 **Request Body:** *(Include only fields that need updating)*  
 ```json
@@ -65,15 +65,15 @@ To enhance development, install:
 ```
 **Response:** Returns the updated todo task.  
 
-<fond color="red">#### **Delete a Todo**  </font>  
+<font color="red">#### **Delete a Todo**  </font>  
 **Endpoint:** `DELETE URL/todos/{todoId}`  
-**Response:** Deletes the specified todo task.  
+**Response:** Returns deleted specified todo task.  
 
 ---
 
 ### **Users**  
 
-<fond color="red">#### **Register a User**  </font>  
+<font color="red">#### **Register a User**  </font>  
 **Endpoint:** `POST URL/users/register`  
 **Request Body:**  
 ```json
@@ -85,7 +85,7 @@ To enhance development, install:
 ```
 **Response:** Returns the newly created user.  
 
-<fond color="red">#### **Login a User**  </font>  
+<font color="red"> #### **Login a User**  </font>  
 **Endpoint:** `POST URL/users/login`  
 **Request Body:**  
 ```json
