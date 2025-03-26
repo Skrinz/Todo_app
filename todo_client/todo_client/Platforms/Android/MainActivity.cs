@@ -28,12 +28,28 @@ public class MainActivity : MauiAppCompatActivity
         base.OnWindowFocusChanged(hasFocus);
         if (hasFocus)
         {
-            ApplyTransparentStatusBar();
+            Window.SetStatusBarColor(Android.Graphics.Color.Transparent);
+            Window.DecorView.SystemUiVisibility = (StatusBarVisibility)(
+                SystemUiFlags.LayoutStable 
+                | SystemUiFlags.LayoutFullscreen
+                | SystemUiFlags.HideNavigation 
+                | SystemUiFlags.ImmersiveSticky 
+                | SystemUiFlags.LayoutHideNavigation
+            );
         }
     }
 
+    // Transparent Phone Status bar
     private void ApplyTransparentStatusBar()
     {
+        // Window.SetStatusBarColor(Android.Graphics.Color.Transparent);
+        // Window.DecorView.SystemUiVisibility = (StatusBarVisibility)(
+        //     SystemUiFlags.LayoutStable 
+        //     | SystemUiFlags.LayoutFullscreen
+        //     | SystemUiFlags.HideNavigation 
+        //     | SystemUiFlags.ImmersiveSticky 
+        //     | SystemUiFlags.LayoutHideNavigation
+        // );
         Window.SetStatusBarColor(Android.Graphics.Color.Transparent);
         Window.DecorView.SystemUiVisibility = (StatusBarVisibility)(
             SystemUiFlags.LayoutFullscreen | SystemUiFlags.LayoutStable

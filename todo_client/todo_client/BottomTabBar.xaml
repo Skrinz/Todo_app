@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:todo_client"
+       x:Class="todo_client.BottomTabBar"
+       FlyoutBehavior="Disabled"
+       TabBarBackgroundColor="#a4a757"
+       TabBarTitleColor="White"
+       TabBarForegroundColor="White"
+       TabBarUnselectedColor="#d3d3d3"
+       TabBarDisabledColor="#d3d3d3"
+       TabBarIsVisible="True"
+       NavBarIsVisible="False">
+    <TabBar>
+        <Tab
+            Title="Tasks"
+            Icon="tasks_icon.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:Tasks}" />
+        </Tab>
+        <Tab
+            Title="Completed"
+            Icon="completed_icon.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:Completed}" />
+        </Tab>
+        <Tab
+            Title="Profile"
+            Icon="profile_icon.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:Profile}" />
+        </Tab>
+    </TabBar>
+</Shell>

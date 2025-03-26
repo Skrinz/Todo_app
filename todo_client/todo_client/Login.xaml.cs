@@ -11,10 +11,17 @@ public partial class Login : ContentPage
     public Login()
     {
         InitializeComponent();
+        NavigationPage.SetHasNavigationBar(this, false);
     }
-
+    
     private async void SignUp_OnClicked(object? sender, EventArgs e)
     {
-        await Navigation.PushModalAsync(new Register());
+        await Navigation.PushAsync(new Register(), false);
+    }
+
+    private void SignIn_OnClicked(object? sender, EventArgs e)
+    {
+        Navigation.PushAsync(new NavigationPage(new BottomTabBar()));
+        // Application.Current.MainPage = new NavigationPage(new BottomTabBar());
     }
 }

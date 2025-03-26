@@ -11,15 +11,16 @@ public partial class Register : ContentPage
     public Register()
     {
         InitializeComponent();
+        NavigationPage.SetHasNavigationBar(this, false);
     }
-
+    
     private async void Register_OnClicked(object? sender, EventArgs e)
     {
-        await Navigation.PopModalAsync();
+        await Navigation.PopAsync(false);
     }
 
-    private void Login_OnClicked(object? sender, EventArgs e)
+    private async void Login_OnClicked(object? sender, EventArgs e)
     {
-        Navigation.PopModalAsync();
+        await Navigation.PopAsync(false);
     }
 }

@@ -15,8 +15,9 @@
                        Margin="0, 100, 0, -80"/>
         
                 <!-- Username Input -->
-                <Border Margin="30,20"
-                        Stroke="Transparent">
+                <Border
+                    Margin="30,20"
+                    Stroke="Transparent">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="5"/>
                     </Border.StrokeShape>
@@ -118,8 +119,9 @@
                 </Border>
                 
                 <!-- Confirm Password Input -->
-                <Border Margin="30,-10"
-                        Stroke="Transparent">
+                <Border 
+                    Margin="30,-10"
+                    Stroke="Transparent">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="5"/>
                     </Border.StrokeShape>

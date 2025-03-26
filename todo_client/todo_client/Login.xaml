@@ -32,7 +32,7 @@
                                Grid.Column="0" />
                         <!-- Vertical Divider -->
                         <BoxView x:Name="EntryDivider" 
-                                 BackgroundColor="Gray" 
+                                 BackgroundColor="#a4adb6" 
                                  WidthRequest="1" 
                                  VerticalOptions="Fill"
                                  Margin="0,5"
@@ -66,7 +66,7 @@
                                Grid.Column="0" />
                         <!-- Vertical Divider -->
                         <BoxView x:Name="PasswordDivider" 
-                                 BackgroundColor="Gray" 
+                                 BackgroundColor="#a4adb6" 
                                  WidthRequest="1" 
                                  VerticalOptions="Fill"
                                  Margin="0,5"
@@ -97,7 +97,9 @@
                         FontAttributes="Bold"
                         BackgroundColor="#a4a757"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="FillAndExpand"/>
+                        VerticalOptions="FillAndExpand"
+                        Clicked="SignIn_OnClicked"
+                        />
                 </Border>
                 
                 <!-- Sign up button -->
