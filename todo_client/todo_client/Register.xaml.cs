@@ -12,6 +12,7 @@ public partial class Register : ContentPage
     {
         InitializeComponent();
         NavigationPage.SetHasNavigationBar(this, false);
+        NavigationPage.SetHasBackButton(this, false);
     }
     
     private async void Register_OnClicked(object? sender, EventArgs e)

@@ -429,6 +429,38 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/MonoAndroid10/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/MonoAndroid10/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.pdb;.xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.16.0.6": {
         "type": "package",
         "dependencies": {
@@ -2804,6 +2836,38 @@
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/MonoAndroid10/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/MonoAndroid10/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.pdb;.xml"
+          }
         }
       },
       "Xamarin.Android.Glide/4.16.0.6": {
@@ -5183,6 +5247,38 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/MonoAndroid10/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/MonoAndroid10/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.pdb;.xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.16.0.6": {
         "type": "package",
         "dependencies": {
@@ -7558,6 +7654,38 @@
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/MonoAndroid10/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/MonoAndroid10/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.pdb;.xml"
+          }
         }
       },
       "Xamarin.Android.Glide/4.16.0.6": {
@@ -10119,6 +10247,38 @@
             "rid": "win-x86"
           }
         }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/netcoreapp2.0/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/netcoreapp2.0/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.deps.json;.xml"
+          }
+        }
       }
     },
     "net9.0-windows10.0.19041/android-arm64": {
@@ -10689,6 +10849,38 @@
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/netcoreapp2.0/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/netcoreapp2.0/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.deps.json;.xml"
+          }
+        }
       }
     },
     "net9.0-windows10.0.19041/android-x64": {
@@ -11258,6 +11450,38 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/netcoreapp2.0/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/netcoreapp2.0/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.deps.json;.xml"
+          }
         }
       }
     },
@@ -11837,6 +12061,38 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/netcoreapp2.0/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/netcoreapp2.0/Plugin.Connectivity.dll": {
+            "related": ".Abstractions.pdb;.Abstractions.xml;.deps.json;.xml"
+          }
         }
       }
     }
@@ -13765,6 +14021,103 @@
         "tools/x86/GenXbf.dll"
       ]
     },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+      "sha512": "p9PofTKArw6wHg45GpRRE+xDioJGOSAgA+X+E+vUf1CFZmTzeOO3YCmFdP7/W8x6f85Z50zugXGoszEGJx4QSg==",
+      "type": "package",
+      "path": "xam.plugin.connectivity/4.0.0.190-beta",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.xml",
+        "lib/MonoAndroid10/Plugin.Connectivity.dll",
+        "lib/MonoAndroid10/Plugin.Connectivity.pdb",
+        "lib/MonoAndroid10/Plugin.Connectivity.xml",
+        "lib/UAP10/Plugin.Connectivity.Abstractions.dll",
+        "lib/UAP10/Plugin.Connectivity.Abstractions.pdb",
+        "lib/UAP10/Plugin.Connectivity.Abstractions.xml",
+        "lib/UAP10/Plugin.Connectivity.XML",
+        "lib/UAP10/Plugin.Connectivity.dll",
+        "lib/UAP10/Plugin.Connectivity.pdb",
+        "lib/UAP10/Plugin.Connectivity.pri",
+        "lib/UAP10/Plugin.Connectivity/Properties/Plugin.Connectivity.rd.xml",
+        "lib/Xamarin.Mac20/Plugin.Connectivity.Abstractions.dll",
+        "lib/Xamarin.Mac20/Plugin.Connectivity.Abstractions.pdb",
+        "lib/Xamarin.Mac20/Plugin.Connectivity.Abstractions.xml",
+        "lib/Xamarin.Mac20/Plugin.Connectivity.dll",
+        "lib/Xamarin.Mac20/Plugin.Connectivity.pdb",
+        "lib/Xamarin.Mac20/Plugin.Connectivity.xml",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.pdb",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.xml",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.dll",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.pdb",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.xml",
+        "lib/XamarinTVOS/Plugin.Connectivity.Abstractions.dll",
+        "lib/XamarinTVOS/Plugin.Connectivity.Abstractions.pdb",
+        "lib/XamarinTVOS/Plugin.Connectivity.Abstractions.xml",
+        "lib/XamarinTVOS/Plugin.Connectivity.dll",
+        "lib/XamarinTVOS/Plugin.Connectivity.pdb",
+        "lib/XamarinTVOS/Plugin.Connectivity.xml",
+        "lib/net45/Plugin.Connectivity.Abstractions.dll",
+        "lib/net45/Plugin.Connectivity.Abstractions.pdb",
+        "lib/net45/Plugin.Connectivity.Abstractions.xml",
+        "lib/net45/Plugin.Connectivity.XML",
+        "lib/net45/Plugin.Connectivity.dll",
+        "lib/net45/Plugin.Connectivity.pdb",
+        "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.dll",
+        "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.pdb",
+        "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.xml",
+        "lib/netcoreapp2.0/Plugin.Connectivity.deps.json",
+        "lib/netcoreapp2.0/Plugin.Connectivity.dll",
+        "lib/netcoreapp2.0/Plugin.Connectivity.xml",
+        "lib/netstandard1.0/Plugin.Connectivity.Abstractions.dll",
+        "lib/netstandard1.0/Plugin.Connectivity.Abstractions.pdb",
+        "lib/netstandard1.0/Plugin.Connectivity.Abstractions.xml",
+        "lib/netstandard1.0/Plugin.Connectivity.deps.json",
+        "lib/netstandard1.0/Plugin.Connectivity.dll",
+        "lib/netstandard1.0/Plugin.Connectivity.pdb",
+        "lib/netstandard1.0/Plugin.Connectivity.xml",
+        "lib/tizen40/Plugin.Connectivity.Abstractions.dll",
+        "lib/tizen40/Plugin.Connectivity.Abstractions.pdb",
+        "lib/tizen40/Plugin.Connectivity.Abstractions.xml",
+        "lib/tizen40/Plugin.Connectivity.deps.json",
+        "lib/tizen40/Plugin.Connectivity.dll",
+        "xam.plugin.connectivity.4.0.0.190-beta.nupkg.sha512",
+        "xam.plugin.connectivity.nuspec"
+      ]
+    },
     "Xamarin.Android.Glide/4.16.0.6": {
       "sha512": "UlVmpTxb1dc7pmbmnDFzTZ7Pyu2EPpORP1JI+tjx/t9DHvzbdo2dLESMiPwYH5THJ/aHV7O0gY0pmaQjjcotXQ==",
       "type": "package",
@@ -15664,11 +16017,15 @@
     "net9.0-android35.0": [
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.14",
-      "Microsoft.NET.ILLink.Tasks >= 9.0.2"
+      "Microsoft.NET.ILLink.Tasks >= 9.0.2",
+      "Newtonsoft.Json >= 13.0.3",
+      "Xam.Plugin.Connectivity >= 4.0.0.190-beta"
     ],
     "net9.0-windows10.0.19041": [
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
-      "Microsoft.Maui.Controls >= 9.0.14"
+      "Microsoft.Maui.Controls >= 9.0.14",
+      "Newtonsoft.Json >= 13.0.3",
+      "Xam.Plugin.Connectivity >= 4.0.0.190-beta"
     ]
   },
   "packageFolders": {
@@ -15734,6 +16091,14 @@
             "target": "Package",
             "version": "[9.0.2, )",
             "autoReferenced": true
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          },
+          "Xam.Plugin.Connectivity": {
+            "target": "Package",
+            "version": "[4.0.0.190-beta, )"
           }
         },
         "imports": [
@@ -15767,6 +16132,14 @@
           "Microsoft.Maui.Controls": {
             "target": "Package",
             "version": "[9.0.14, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          },
+          "Xam.Plugin.Connectivity": {
+            "target": "Package",
+            "version": "[4.0.0.190-beta, )"
           }
         },
         "imports": [

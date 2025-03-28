@@ -12,6 +12,7 @@ public partial class Profile : ContentPage
     {
         InitializeComponent();
         NavigationPage.SetHasNavigationBar(this, false);
+        NavigationPage.SetHasBackButton(this, false);
     }
 
     private void SignOut_OnClicked(object? sender, EventArgs e)

@@ -1,32 +1,75 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="todo_client.Completed"
              Shell.NavBarIsVisible="False"
              BackgroundColor="#101825">
-    <ContentPage.Content>
-        <VerticalStackLayout
-            Margin="0"
-            Spacing="0">
-            
-            <!-- Header Bar -->
-            <Grid BackgroundColor="#a4a757" HeightRequest="50" VerticalOptions="Start">
-                <Label Text="Tasks"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       TextColor="White"
-                       FontSize="20"
-                       FontAttributes="Bold"/>
-            </Grid>
-            
-            <!-- Content -->
-            <ScrollView>
-                <VerticalStackLayout>
-                    <Label Text="Completed"></Label>
-                </VerticalStackLayout>
-            </ScrollView>
-            
-        </VerticalStackLayout>
-    </ContentPage.Content>
+  
+  <AbsoluteLayout>
+    <AbsoluteLayout.Children>
+
+      <!-- Main Content -->
+      <Grid BackgroundColor="#101825" RowDefinitions="Auto,*"
+            AbsoluteLayout.LayoutFlags="All"
+            AbsoluteLayout.LayoutBounds="0,0,1,1">
+        <!-- Header Bar -->
+        <Grid BackgroundColor="#a4a757" HeightRequest="50" Grid.Row="0">
+          <Label Text="Completed"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 TextColor="White"
+                 FontSize="20"
+                 FontAttributes="Bold"/>
+        </Grid>
+
+        <!-- Content Area -->
+        <Grid Grid.Row="1" Margin="20,0,20,0">
+          <RefreshView x:Name="refreshView" Refreshing="OnRefresh">
+            <CollectionView x:Name="completedLV"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="FillAndExpand"
+                            ItemsLayout="VerticalList"
+                            SelectionMode="None">
+              <CollectionView.ItemTemplate>
+                <DataTemplate>
+                  <Grid Padding="5">
+                    <Border 
+                      Stroke="Transparent"
+                      BackgroundColor="Transparent">
+                      <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="6"/>
+                      </Border.StrokeShape>
+                      <Grid 
+                        ColumnDefinitions="*,Auto" VerticalOptions="Center"
+                        HeightRequest="50" Padding="5"
+                        BackgroundColor="White">
+                        <!-- Task Title -->
+                        <Label Grid.Column="0" Text="{Binding title}" 
+                               FontSize="16" TextColor="Black" VerticalOptions="Center" Margin="10,0"/>
+                        <!-- Delete Icon -->
+                        
+                        <Border Grid.Column="1" Stroke="Transparent" BackgroundColor="#fe706d"
+                                VerticalOptions="Center" HorizontalOptions="Center" Padding="5">
+                          <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="5"/>
+                          </Border.StrokeShape>
+                          <Image Source="delete_icon.svg" VerticalOptions="Center" HorizontalOptions="Center"
+                                 HeightRequest="24" WidthRequest="24"/>
+                        </Border>
+                      </Grid>
+                    </Border>
+                  </Grid>
+                </DataTemplate>
+              </CollectionView.ItemTemplate>
+            </CollectionView>
+          </RefreshView>
+          <!-- ActivityIndicator Overlay -->
+          <ActivityIndicator x:Name="activityIndicator"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center" />
+        </Grid>
+      </Grid>
+    </AbsoluteLayout.Children>
+  </AbsoluteLayout>
+  
 </ContentPage>

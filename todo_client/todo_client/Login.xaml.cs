@@ -12,6 +12,7 @@ public partial class Login : ContentPage
     {
         InitializeComponent();
         NavigationPage.SetHasNavigationBar(this, false);
+        NavigationPage.SetHasBackButton(this, false);
     }
     
     private async void SignUp_OnClicked(object? sender, EventArgs e)
