@@ -44,6 +44,7 @@
                                HorizontalOptions="FillAndExpand"
                                VerticalOptions="Center"
                                TextColor="Black"
+                               Keyboard="Email"
                                Grid.Column="2"/>
                     </Grid>
                 </Border>

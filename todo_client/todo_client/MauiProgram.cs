@@ -21,14 +21,6 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
-
-        EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler, view) =>
-        {
-        #if ANDROID
-                    handler.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.White);
-        #endif
-                });
-        
 #if DEBUG
         builder.Logging.AddDebug();
 #endif

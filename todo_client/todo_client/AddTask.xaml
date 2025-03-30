@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="todo_client.AddTask"
+             Shell.NavBarIsVisible="True"
+             Shell.TabBarIsVisible="False">
+    
+    <Shell.TitleView>
+        <Grid BackgroundColor="#a4a757" Padding="10">
+            <Label Text="Add"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="White"
+                   FontSize="20" />
+        </Grid>
+    </Shell.TitleView>
+    
+    <ContentPage.Content>
+        <Grid Padding="16"
+              RowDefinitions="Auto,*,Auto"
+              ColumnDefinitions="*"
+              BackgroundColor="#101825">
+            
+            <!-- Title Entry -->
+            <Entry x:Name="TitleEntry"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   Placeholder="Title"
+                   PlaceholderColor="#a4adb6"
+                   TextColor="White"
+                   BackgroundColor="Transparent"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="End" />
+            
+            <!-- Description Editor -->
+            <Editor x:Name="DescEditor"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="24"
+                    FontAttributes="None"
+                    Placeholder="Description"
+                    PlaceholderColor="#a4adb6"
+                    TextColor="White"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Start" />
+
+            <!-- Add Button -->
+            <Button Text="Add"
+                    FontAttributes="Bold"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    BackgroundColor="#569fe8"
+                    TextColor="White"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Center"
+                     />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

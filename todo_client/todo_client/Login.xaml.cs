@@ -22,7 +22,6 @@ public partial class Login : ContentPage
 
     private void SignIn_OnClicked(object? sender, EventArgs e)
     {
-        Navigation.PushAsync(new NavigationPage(new BottomTabBar()));
-        // Application.Current.MainPage = new NavigationPage(new BottomTabBar());
+        Application.Current.MainPage = new NavigationPage(new BottomTabBar());
     }
 }

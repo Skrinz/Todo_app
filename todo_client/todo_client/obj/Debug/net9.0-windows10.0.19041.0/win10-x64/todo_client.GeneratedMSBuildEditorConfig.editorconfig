@@ -22,6 +22,12 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/AddTask.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = todo_client.AddTask.xaml
+build_metadata.AdditionalFiles.TargetPath = AddTask.xaml
+build_metadata.AdditionalFiles.RelativePath = AddTask.xaml
+
 [C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.App.xaml
@@ -39,6 +45,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.Completed.xaml
 build_metadata.AdditionalFiles.TargetPath = Completed.xaml
 build_metadata.AdditionalFiles.RelativePath = Completed.xaml
+
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/EditTask.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = todo_client.EditTask.xaml
+build_metadata.AdditionalFiles.TargetPath = EditTask.xaml
+build_metadata.AdditionalFiles.RelativePath = EditTask.xaml
 
 [C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/Login.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

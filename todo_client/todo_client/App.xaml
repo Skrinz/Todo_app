@@ -9,6 +9,12 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            
+            <Style TargetType="Shell">
+                <Setter Property="BackgroundColor" Value="#a4a757" />  <!-- Nav Bar Background -->
+                <Setter Property="TitleColor" Value="White" />  <!-- Title Text Color -->
+                <Setter Property="ForegroundColor" Value="White" />  <!-- Back Button Color -->
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

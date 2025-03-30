@@ -29,7 +29,8 @@
                             HorizontalOptions="Fill"
                             VerticalOptions="FillAndExpand"
                             ItemsLayout="VerticalList"
-                            SelectionMode="None">
+                            SelectionMode="Single"
+                            SelectionChanged="TasksLV_OnSelectionChanged">
               <CollectionView.ItemTemplate>
                 <DataTemplate>
                   <Grid Padding="5">
@@ -81,6 +82,7 @@
               CornerRadius="10"
               AbsoluteLayout.LayoutFlags="PositionProportional"
               AbsoluteLayout.LayoutBounds="0.95,0.95,60,60"
+              Clicked="Add_OnClicked"
               />
 
     </AbsoluteLayout.Children>

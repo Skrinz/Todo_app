@@ -12,6 +12,7 @@
        TabBarDisabledColor="#d3d3d3"
        TabBarIsVisible="True"
        NavBarIsVisible="False">
+    
     <TabBar>
         <Tab
             Title="Tasks"
