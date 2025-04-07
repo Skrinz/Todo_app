@@ -12,4 +12,9 @@ public partial class AddTask : ContentPage
     {
         InitializeComponent();
     }
+
+    private async void BackBtn_OnClicked(object? sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }
