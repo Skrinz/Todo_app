@@ -163,4 +163,23 @@ public partial class Completed : ContentPage
     {
         
     }
+
+    private void CompletedLV_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        // Only proceed if there is a newly selected item
+        if (e.CurrentSelection != null && e.CurrentSelection.Count > 0)
+        {
+            // Optionally get the selected item:
+            var selectedTask = e.CurrentSelection.FirstOrDefault() as TaskList;
+        
+            // Clear the selection so it doesn't fire again on deselection
+            if (sender is CollectionView collectionView)
+            {
+                collectionView.SelectedItem = null;
+            }
+        
+            // Navigate to EditTask page
+            Navigation.PushAsync(new EditTask());
+        }
+    }
 }

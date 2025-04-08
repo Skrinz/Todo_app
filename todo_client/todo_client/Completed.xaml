@@ -29,7 +29,8 @@
                             HorizontalOptions="Fill"
                             VerticalOptions="FillAndExpand"
                             ItemsLayout="VerticalList"
-                            SelectionMode="None">
+                            SelectionMode="Single"
+                            SelectionChanged="CompletedLV_OnSelectionChanged">
               <CollectionView.ItemTemplate>
                 <DataTemplate>
                   <Grid Padding="5">
