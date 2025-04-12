@@ -12,11 +12,14 @@ generator client {
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
-  name     String
-  email    String   @unique
-  password String
-  todos    Todo[]
+  id         Int      @id @default(autoincrement())
+  fname      String
+  lname      String
+  email      String   @unique
+  password   String
+  todos      Todo[]
+  timeCreated  DateTime @default(now())
+  timeModified DateTime @updatedAt
 }
 
 model Todo {
@@ -26,6 +29,8 @@ model Todo {
   completed Boolean
   userId    Int
   user      User   @relation(fields: [userId], references: [id])
+  timeCreated  DateTime @default(now())
+  timeModified DateTime @updatedAt 
 }
 
 
