@@ -1,28 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Veekey\\Documents\\Programming\\Mobile Development\\MAUI\\Todo_app\\todo_client\\todo_client\\todo_client.csproj": {}
+    "C:\\Users\\User\\Repos\\Todo_app\\todo_client\\todo_client\\todo_client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Veekey\\Documents\\Programming\\Mobile Development\\MAUI\\Todo_app\\todo_client\\todo_client\\todo_client.csproj": {
+    "C:\\Users\\User\\Repos\\Todo_app\\todo_client\\todo_client\\todo_client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Veekey\\Documents\\Programming\\Mobile Development\\MAUI\\Todo_app\\todo_client\\todo_client\\todo_client.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Repos\\Todo_app\\todo_client\\todo_client\\todo_client.csproj",
         "projectName": "todo_client",
-        "projectPath": "C:\\Users\\Veekey\\Documents\\Programming\\Mobile Development\\MAUI\\Todo_app\\todo_client\\todo_client\\todo_client.csproj",
-        "packagesPath": "C:\\Users\\Veekey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Veekey\\Documents\\Programming\\Mobile Development\\MAUI\\Todo_app\\todo_client\\todo_client\\obj\\",
+        "projectPath": "C:\\Users\\User\\Repos\\Todo_app\\todo_client\\todo_client\\todo_client.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Repos\\Todo_app\\todo_client\\todo_client\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
-          "C:\\Users\\Veekey\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0-android",
           "net9.0-windows10.0.19041.0"
         ],
         "sources": {
-          "C:\\Users\\Veekey\\.dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -62,7 +62,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.2, )",
+              "version": "[9.0.4, )",
               "autoReferenced": true
             },
             "Newtonsoft.Json": {
@@ -93,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Veekey\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         },
         "net9.0-windows10.0.19041": {
           "targetAlias": "net9.0-windows10.0.19041.0",
@@ -140,7 +140,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Veekey\\.dotnet\\sdk\\9.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
