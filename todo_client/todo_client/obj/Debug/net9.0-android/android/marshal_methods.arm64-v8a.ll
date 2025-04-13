@@ -1115,7 +1115,7 @@ target triple = "aarch64-unknown-linux-android21"
 
 ; Functions
 
-; Function attributes: memory(write, argmem: none, inaccessiblemem: none) "min-legal-vector-width"="0" mustprogress "no-trapping-math"="true" nofree norecurse nosync nounwind "stack-protector-buffer-size"="8" uwtable willreturn
+; Function attributes: memory(write, argmem: none, inaccessiblemem: none) "min-legal-vector-width"="0" mustprogress nofree norecurse nosync "no-trapping-math"="true" nounwind "stack-protector-buffer-size"="8" uwtable willreturn
 define void @xamarin_app_init(ptr nocapture noundef readnone %env, ptr noundef %fn) local_unnamed_addr #0
 {
 	%fnIsNull = icmp eq ptr %fn, null
@@ -1139,14 +1139,14 @@ define void @xamarin_app_init(ptr nocapture noundef readnone %env, ptr noundef %
 
 ; External functions
 
-; Function attributes: "no-trapping-math"="true" noreturn nounwind "stack-protector-buffer-size"="8"
+; Function attributes: noreturn "no-trapping-math"="true" nounwind "stack-protector-buffer-size"="8"
 declare void @abort() local_unnamed_addr #2
 
 ; Function attributes: nofree nounwind
 declare noundef i32 @puts(ptr noundef) local_unnamed_addr #1
-attributes #0 = { memory(write, argmem: none, inaccessiblemem: none) "min-legal-vector-width"="0" mustprogress "no-trapping-math"="true" nofree norecurse nosync nounwind "stack-protector-buffer-size"="8" "target-cpu"="generic" "target-features"="+fix-cortex-a53-835769,+neon,+outline-atomics,+v8a" uwtable willreturn }
+attributes #0 = { memory(write, argmem: none, inaccessiblemem: none) "min-legal-vector-width"="0" mustprogress nofree norecurse nosync "no-trapping-math"="true" nounwind "stack-protector-buffer-size"="8" "target-cpu"="generic" "target-features"="+fix-cortex-a53-835769,+neon,+outline-atomics,+v8a" uwtable willreturn }
 attributes #1 = { nofree nounwind }
-attributes #2 = { "no-trapping-math"="true" noreturn nounwind "stack-protector-buffer-size"="8" "target-cpu"="generic" "target-features"="+fix-cortex-a53-835769,+neon,+outline-atomics,+v8a" }
+attributes #2 = { noreturn "no-trapping-math"="true" nounwind "stack-protector-buffer-size"="8" "target-cpu"="generic" "target-features"="+fix-cortex-a53-835769,+neon,+outline-atomics,+v8a" }
 
 ; Metadata
 !llvm.module.flags = !{!0, !1, !7, !8, !9, !10}

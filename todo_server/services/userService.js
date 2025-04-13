@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const prisma = new PrismaClient();
 
 //register user
-const registerUser = async (username, email, password) => {
+const registerUser = async (fname, lname, email, password) => {
   //check if email already exists
   const existingUser = await prisma.user.findUnique({
     where: {
@@ -21,7 +21,8 @@ const registerUser = async (username, email, password) => {
   //create user
   const newUser = await prisma.user.create({
     data: {
-      name: username,
+      fname: fname,
+      lname: lname,
       email: email,
       password: hashedPassword,
     },

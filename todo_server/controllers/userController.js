@@ -2,13 +2,20 @@ const userService = require("../services/userService");
 
 const registerController = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { fname, lname, email, password } = req.body;
 
     //attempt to register user
-    const user = await userService.registerUser(username, email, password);
+    const user = await userService.registerUser(fname, lname, email, password);
 
     //if registration is successful
-    res.status(201).json({user:user});
+    res.status(201).json({user:{
+      id: user.id,
+      fname: user.fname,
+      lname: user.lname,
+      email: user.email,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
+    }});
 
   } catch (error) {
 

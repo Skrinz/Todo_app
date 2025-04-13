@@ -16017,6 +16017,7 @@
     "net9.0-android35.0": [
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.14",
+      "Microsoft.Maui.Core >= 9.0.14",
       "Microsoft.NET.ILLink.Tasks >= 9.0.4",
       "Newtonsoft.Json >= 13.0.3",
       "Xam.Plugin.Connectivity >= 4.0.0.190-beta"
@@ -16024,6 +16025,7 @@
     "net9.0-windows10.0.19041": [
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.14",
+      "Microsoft.Maui.Core >= 9.0.14",
       "Newtonsoft.Json >= 13.0.3",
       "Xam.Plugin.Connectivity >= 4.0.0.190-beta"
     ]
@@ -16086,6 +16088,10 @@
             "target": "Package",
             "version": "[9.0.14, )"
           },
+          "Microsoft.Maui.Core": {
+            "target": "Package",
+            "version": "[9.0.14, )"
+          },
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
@@ -16130,6 +16136,10 @@
             "version": "[9.0.0, )"
           },
           "Microsoft.Maui.Controls": {
+            "target": "Package",
+            "version": "[9.0.14, )"
+          },
+          "Microsoft.Maui.Core": {
             "target": "Package",
             "version": "[9.0.14, )"
           },

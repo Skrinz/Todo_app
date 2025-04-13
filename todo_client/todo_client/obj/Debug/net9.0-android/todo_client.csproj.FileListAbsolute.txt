@@ -1,11 +1,3 @@
-C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\todo_client.runtimeconfig.json
-C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\todo_client.dll
-C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\todo_client.pdb
-C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\com.companyname.todo_client.apk
-C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\com.companyname.todo_client.aab
-C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\com.companyname.todo_client-Signed.aab
-C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\com.companyname.todo_client-Signed.apk
-C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\com.companyname.todo_client-Signed.apk.idsig
 C:\Users\User\Repos\Todo_app\todo_client\todo_client\obj\Debug\net9.0-android\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs
 C:\Users\User\Repos\Todo_app\todo_client\todo_client\obj\Debug\net9.0-android\build.props
 C:\Users\User\Repos\Todo_app\todo_client\todo_client\obj\Debug\net9.0-android\adb.props
@@ -157,6 +149,14 @@ C:\Users\User\Repos\Todo_app\todo_client\todo_client\obj\Debug\net9.0-android\to
 C:\Users\User\Repos\Todo_app\todo_client\todo_client\obj\Debug\net9.0-android\todo_client.AssemblyInfo.cs
 C:\Users\User\Repos\Todo_app\todo_client\todo_client\obj\Debug\net9.0-android\todo_client.csproj.CoreCompileInputs.cache
 C:\Users\User\Repos\Todo_app\todo_client\todo_client\obj\Debug\net9.0-android\todo_client.sourcelink.json
+C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\todo_client.runtimeconfig.json
+C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\todo_client.dll
+C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\todo_client.pdb
+C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\com.companyname.todo_client.apk
+C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\com.companyname.todo_client.aab
+C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\com.companyname.todo_client-Signed.aab
+C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\com.companyname.todo_client-Signed.apk
+C:\Users\User\Repos\Todo_app\todo_client\todo_client\bin\Debug\net9.0-android\com.companyname.todo_client-Signed.apk.idsig
 C:\Users\User\Repos\Todo_app\todo_client\todo_client\obj\Debug\net9.0-android\XamlC.stamp
 C:\Users\User\Repos\Todo_app\todo_client\todo_client\obj\Debug\net9.0-android\todo_client.dll
 C:\Users\User\Repos\Todo_app\todo_client\todo_client\obj\Debug\net9.0-android\todo_client.pdb

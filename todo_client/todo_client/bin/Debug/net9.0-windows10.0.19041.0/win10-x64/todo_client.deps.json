@@ -11,6 +11,7 @@
         "dependencies": {
           "Microsoft.Extensions.Logging.Debug": "9.0.0",
           "Microsoft.Maui.Controls": "9.0.14",
+          "Microsoft.Maui.Core": "9.0.14",
           "Newtonsoft.Json": "13.0.3",
           "Xam.Plugin.Connectivity": "4.0.0.190-beta",
           "Microsoft.Web.WebView2.Core.Projection": "1.0.2792.45",
