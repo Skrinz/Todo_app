@@ -38,7 +38,14 @@ const loginController = async (req, res) => {
     const user = await userService.loginUser(email, password);
 
     //if login is successful
-    res.status(200).json({user:user});
+    res.status(200).json({user:{
+      id: user.id,
+      fname: user.fname,
+      lname: user.lname,
+      email: user.email,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
+    }});
 
   } catch (error) {
     

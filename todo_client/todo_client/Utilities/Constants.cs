@@ -8,6 +8,6 @@ public class Constants
     public static readonly string POSTS = "/posts";
     
     public static readonly string SERVERURL = "http://192.168.1.8:3000";
-    public static readonly string REGISTER = "/users/register";
-        
+    public static readonly string REGISTER = "/users/register"; 
+    public static readonly string LOGIN = "/users/login";
 }
