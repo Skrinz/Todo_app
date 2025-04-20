@@ -7,6 +7,12 @@ Follow these steps to set up and run the server in **VS Code**:
 cd todo_server
 npm install
 ```
+---
+## **🛡️ Server Device Configuration**
+ - On the device running the server:
+    - Turn off Windows Defender
+    - Or atleast whitelist you app and necessary ports
+---
 
 ### **🔄 Apply Database Migrations**  
 If you modify the Prisma schema, run:  
@@ -37,8 +43,8 @@ To enhance development, install:
 
 ### **📝 Todos**  
 
-#### **✅ Create a Todo**  
-**Endpoint:** `POST /todos/`  
+#### ** Create a Todo**  
+**Endpoint:** `POST URL/todos/`  
 **Request Body:**  
 ```json
 {
@@ -78,7 +84,8 @@ To enhance development, install:
 **Request Body:**  
 ```json
 {
-    "username": "testuser",
+    "fname": "firstname",
+    "lname": "lastname",
     "email": "test@example.com",
     "password": "testpassword"
 }
@@ -95,3 +102,54 @@ To enhance development, install:
 }
 ```
 **Response:** Returns user details upon successful login.
+
+---
+
+# **📱 Todo App – Client Setup**
+
+## **🔧 Prerequisites**
+
+Before you begin, make sure the following are installed:
+
+- ✅ **Android SDK**  
+- ✅ **Java SDK 17**  
+- ✅ **MSVC (Microsoft Visual C++)**  
+  > Install via **Visual Studio Build Tools**.
+
+---
+
+## **📲 Device Setup**
+
+To run the app on a physical Android device:
+
+1. **Enable Developer Mode** on your phone  
+2. **Enable USB Debugging** in Developer Options  
+3. **Connect your phone via USB**
+
+---
+
+## **🚦 Pre-Run Checklist**
+
+Run this to check installed .NET workloads:
+
+```sh
+dotnet workload list
+```
+You should see:
+```sh
+- maui
+- maui-tizen
+- maui-android
+- android
+```
+if something's missing:
+```sh
+dotnet workload install maui
+# Repeat for any other missing workloads
+```
+Clean and restore the project:
+```sh
+dotnet clean
+dotnet restore
+```
+--
