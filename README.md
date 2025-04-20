@@ -8,10 +8,12 @@ cd todo_server
 npm install
 ```
 ---
+
 ## **🛡️ Server Device Configuration**
  - On the device running the server:
     - Turn off Windows Defender
     - Or atleast whitelist you app and necessary ports
+    
 ---
 
 ### **🔄 Apply Database Migrations**  
@@ -59,7 +61,7 @@ To enhance development, install:
 **Endpoint:** `GET URL/todos?userId={userId}`  
 **Response:** Returns all todo tasks associated with the specified `userId`.  
 
-#### **Update a Todo** *(Requires Discussion on Access Control)*  
+#### **Update a Todo**  
 **Endpoint:** `PATCH URL/todos/{todoId}`  
 **Request Body:** *(Include only fields that need updating)*  
 ```json
@@ -152,4 +154,3 @@ Clean and restore the project:
 dotnet clean
 dotnet restore
 ```
---
