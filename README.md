@@ -1,3 +1,8 @@
+Sample Account for testing:
+email: daccount@gmail.com
+password: 12345678
+
+
 # **🚀 Todo App – Server Setup**  
 
 ## **🛠️ Getting Started**  

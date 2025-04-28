@@ -32,5 +32,3 @@ model Todo {
   timeCreated  DateTime @default(now())
   timeModified DateTime @updatedAt 
 }
-
-

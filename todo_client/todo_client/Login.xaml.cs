@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace todo_client;
+﻿namespace todo_client;
 
 public partial class Login : ContentPage
 {
@@ -52,10 +46,12 @@ public partial class Login : ContentPage
 
         try
         {
-            var (success, message) = await _apiService.LoginUser(email, password);
+            var (success, message, user) = await _apiService.LoginUser(email, password);
 
-            if (success)
+            if (success && user != null)
             {
+                SessionManager.SetUser(user);
+                Console.WriteLine($"User ID: {SessionManager.CurrentUser.Id}");
                 await DisplayAlert("Success", "Login successful!", "OK");
                 Application.Current.MainPage = new NavigationPage(new BottomTabBar());
             }

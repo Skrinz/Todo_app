@@ -1,8 +1,7 @@
-﻿using System;
-using System.Net.Http;
+﻿
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
+
 
 namespace todo_client
 {
@@ -103,62 +102,57 @@ namespace todo_client
         }
 
         // Login user
-        public async Task<(bool Success, string Message)> LoginUser(string email, string password)
+        public async Task<(bool Success, string Message, UserData User)> LoginUser(string email, string password)
         {
             try
             {
-                // Prepare request body
-                var requestData = new
-                {
-                    email,
-                    password
-                };
-        
+                var requestData = new { email, password };
                 var json = JsonSerializer.Serialize(requestData);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-                
-                //Constructing API URL login endpoint
+
                 var url = $"{Constants.SERVERURL}{Constants.LOGIN}";
-                Console.WriteLine($"Attempting to connect to: {url}");
-        
-                //Requesting login to the server
                 var response = await _httpClient.PostAsync(url, content);
+
                 Console.WriteLine($"Response status code: {response.StatusCode}");
-        
+
                 if (response.IsSuccessStatusCode)
                 {
-                    return (true, "Login successful!");
+                    // Read response content
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Response Content: {responseContent}");
+                    
+                    // Deserialize the response to get the 'user' object from the response body
+                    var responseObject = JsonSerializer.Deserialize<ResponseWrapper>(responseContent, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    // Check if the 'user' object is not null
+                    if (responseObject?.User != null)
+                    {
+                        // Return the user object from the response
+                        return (true, "Login successful!", responseObject.User);
+                    }
+                    else
+                    {
+                        return (false, "User data is null", null);
+                    }
                 }
                 else
                 {
                     var errorContent = await response.Content.ReadAsStringAsync();
-                    try
-                    {
-                        using var jsonDoc = JsonDocument.Parse(errorContent);
-                        if (jsonDoc.RootElement.TryGetProperty("errors", out var errorProperty))
-                        {
-                            return (false, errorProperty.GetString() ?? "Unknown error");
-                        }
-                        else if (jsonDoc.RootElement.TryGetProperty("message", out var messageProperty))
-                        {
-                            return (false, messageProperty.GetString() ?? "Unknown error");
-                        }
-                        else
-                        {
-                            return (false, "Unexpected error response");
-                        }
-                    }
-                    catch
-                    {
-                        return (false, "Error with your inputs");
-                    }
+                    return (false, $"Login failed: {errorContent}", null);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Login error: {ex}");
-                return (false, $"Connection failure: {ex.Message}");
+                return (false, $"Exception occurred: {ex.Message}", null);
             }
         }
+        public class ResponseWrapper
+        {
+            public UserData User { get; set; }
+        }
+
     }
 }
