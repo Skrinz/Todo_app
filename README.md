@@ -1,161 +1,158 @@
-Sample Account for testing:
-email: daccount@gmail.com
-password: 12345678
+## Table of Contents
 
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Server Setup](#server-setup)
+- [Database Configuration](#database-configuration)
+- [API Endpoints](#api-endpoints)
+- [Client Setup](#client-setup)
+- [Testing](#testing)
 
-# **🚀 Todo App – Server Setup**  
+## Getting Started
 
-## **🛠️ Getting Started**  
-Follow these steps to set up and run the server in **VS Code**:  
+These instructions will help you set up and run the Todo App API on your local machine.
 
-```sh
-cd todo_server
-npm install
-```
----
+### Prerequisites
 
-## **🛡️ Server Device Configuration**
- - On the device running the server:
-    - Turn off Windows Defender
-    - Or atleast whitelist you app and necessary ports
-    
----
+* Node.js
+* npm
+* Visual Studio Code
+* Prisma CLI
+* Android SDK (for mobile app): Follow this [instructions](https://learn.microsoft.com/en-us/dotnet/android/getting-started/installation/dependencies)
+* Java SDK 17 (for mobile app)
+* Navigate to settings -> builds, execution, deployment -> android. Setup the android sdk and java sdk locations.
 
-### **🔄 Apply Database Migrations**  
-If you modify the Prisma schema, run:  
-```sh
-npx prisma migrate dev --name <migration_name>
-```
+### Server Setup
 
----
+1. Navigate to server directory:
+   ```bash
+   cd todo_server
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Required packages:
+   ```bash
+   npm install express bcrypt express-validator cors
+   ```
 
-## **📦 Installed Dependencies**  
-Ensure the following packages are installed:  
-```sh
-npm install express bcrypt express-validator cors
-```
+### Database Configuration
 
----
+1. If there is changes with database schema, apply database migrations:
+   ```bash
+   npx prisma migrate dev --name <migration-name>
+   ```
 
-## **💡 Recommended VS Code Extensions**  
-Install:  
-- **Prisma** – ORM support  
-- **SQLite** – SQLite database management  
-- **SQLite Viewer** – View database contents  
-- **DevDB** – Database management tool  
+### API Endpoints
 
----
+#### Todos
 
-## **📌 API Endpoints**  
+1. Create Todo
+    - Endpoint: `POST /todos/`
+    - Request Body:
+      ```json
+      {
+        "title": "Test",
+        "details": "Test details",
+        "userId": 2
+      }
+      ```
+    - Response: Returns the created todo task.
 
-### **📝 Todos**  
+2. Get All Todos
+    - Endpoint: `GET /todos?userId={userId}`
+    - Response: Returns all todo tasks associated with the specified userId.
 
-#### ** Create a Todo**  
-**Endpoint:** `POST URL/todos/`  
-**Request Body:**  
-```json
-{
-    "title": "Test",
-    "details": "Test details",
-    "userId": 2
-}
-```
-**Response:** Returns the created todo task.  
+3. Update Todo
+    - Endpoint: `PATCH /todos/{todoId}`
+    - Request Body:
+      ```json
+      {
+        "title": "Updated Title",
+        "details": "Updated Details",
+        "completed": true
+      }
+      ```
+    - Response: Returns the updated todo task.
 
-#### **Get All Todos**  
-**Endpoint:** `GET URL/todos?userId={userId}`  
-**Response:** Returns all todo tasks associated with the specified `userId`.  
+4. Delete Todo
+    - Endpoint: `DELETE /todos/{todoId}`
+    - Response: Returns the deleted todo task.
 
-#### **Update a Todo**  
-**Endpoint:** `PATCH URL/todos/{todoId}`  
-**Request Body:** *(Include only fields that need updating)*  
-```json
-{
-    "title": "Updated Title",
-    "details": "Updated Details",
-    "completed": true
-}
-```
-**Response:** Returns the updated todo task.  
+#### Users
 
-#### **Delete a Todo**  
-**Endpoint:** `DELETE URL/todos/{todoId}`  
-**Response:** Returns Deleted specified todo task.  
+1. Register User
+    - Endpoint: `POST /users/register`
+    - Request Body:
+      ```json
+      {
+        "fname": "firstname",
+        "lname": "lastname",
+        "email": "test@example.com",
+        "password": "testpassword"
+      }
+      ```
+    - Response: Returns the newly created user.
 
----
+2. Login User
+    - Endpoint: `POST /users/login`
+    - Request Body:
+      ```json
+      {
+        "email": "test@example.com",
+        "password": "testpassword"
+      }
+      ```
+    - Response: Returns user details upon successful login.
 
-### **👤 Users**  
+### Client Setup (Mobile App)
 
-#### **Register a User**  
-**Endpoint:** `POST URL/users/register`  
-**Request Body:**  
-```json
-{
-    "fname": "firstname",
-    "lname": "lastname",
-    "email": "test@example.com",
-    "password": "testpassword"
-}
-```
-**Response:** Returns the newly created user.  
+1. Prerequisites:
+    - Android SDK
+    - Java SDK 17
 
-#### **Login a User**  
-**Endpoint:** `POST URL/users/login`  
-**Request Body:**  
-```json
-{
-    "email": "test@example.com",
-    "password": "testpassword"
-}
-```
-**Response:** Returns user details upon successful login.
+2. Device Setup:
+    - Enable Developer Mode on your phone
+    - Enable USB Debugging in Developer Options
+    - Connect phone via USB
 
----
+3. Pre-Run Checklist:
+   ```bash
+   dotnet workload list
+   ```
+   Expected output:
+   ```
+   maui
+   maui-tizen
+   maui-android
+   android
+   ```
+   If workloads are missing:
+   ```bash
+   dotnet workload install maui
+   ```
+   Clean and restore project:
+   ```bash
+   dotnet clean
+   dotnet restore
+   ```
 
-# **📱 Todo App – Client Setup**
+## Testing
 
-## **🔧 Prerequisites**
+Sample account for testing:
+- Email: daccount@gmail.com
+- Password: 12345678
 
-Before you begin, make sure the following are installed:
+## Server Device Configuration
 
-- ✅ **Android SDK**  
-- ✅ **Java SDK 17**  
-- ✅ **MSVC (Microsoft Visual C++)**  
-  > Install via **Visual Studio Build Tools**.
+On the device running the server:
+1. Disable Windows Defender, OR
+2. Whitelist your app and necessary ports
 
----
+## Recommended VS Code Extensions
 
-## **📲 Device Setup**
-
-To run the app on a physical Android device:
-
-1. **Enable Developer Mode** on your phone  
-2. **Enable USB Debugging** in Developer Options  
-3. **Connect your phone via USB**
-
----
-
-## **🚦 Pre-Run Checklist**
-
-Run this to check installed .NET workloads:
-
-```sh
-dotnet workload list
-```
-You should see:
-```sh
-- maui
-- maui-tizen
-- maui-android
-- android
-```
-if something's missing:
-```sh
-dotnet workload install maui
-# Repeat for any other missing workloads
-```
-Clean and restore the project:
-```sh
-dotnet clean
-dotnet restore
-```
+1. Prisma: For ORM support
+2. SQLite: For SQLite database management
+3. SQLite Viewer: To view database contents
+4. DevDB: Database management tool

@@ -60,17 +60,19 @@ namespace todo_client
                 
                 //constructing the API URl register endpoint
                 var url = $"{Constants.SERVERURL}{Constants.REGISTER}";
+                http://10.16.199.202:3000/users/register
                 Console.WriteLine($"Attempting to connect to: {url}");
                 
                 //Requesting register to the server
                 var response = await _httpClient.PostAsync(url, content);
                 Console.WriteLine($"Response status code: {response.StatusCode}");
-
+                
+                //successful registration
                 if (response.IsSuccessStatusCode)
                 {
                     return (true, "Registration successful!");
                 }
-                else
+                else//not successful registration
                 {
                     var errorContent = await response.Content.ReadAsStringAsync();
                     try
