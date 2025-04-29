@@ -38,7 +38,7 @@ npm install express bcrypt express-validator cors
 ---
 
 ## **💡 Recommended VS Code Extensions**  
-To enhance development, install:  
+Install:  
 - **Prisma** – ORM support  
 - **SQLite** – SQLite database management  
 - **SQLite Viewer** – View database contents  

@@ -53,7 +53,8 @@ public partial class Login : ContentPage
                 SessionManager.SetUser(user);
                 Console.WriteLine($"User ID: {SessionManager.CurrentUser.Id}");
                 await DisplayAlert("Success", "Login successful!", "OK");
-                Application.Current.MainPage = new NavigationPage(new BottomTabBar());
+                Application.Current.Windows.FirstOrDefault().Page = new NavigationPage(new BottomTabBar());
+                // Application.Current.MainPage = new NavigationPage(new BottomTabBar());
             }
             else
             {

@@ -18,5 +18,6 @@ public partial class Profile : ContentPage
     private async void SignOut_OnClicked(object? sender, EventArgs e)
     {
         Application.Current.MainPage = new NavigationPage(new Login());
+        Application.Current.Windows.FirstOrDefault().Page = new NavigationPage(new Login());
     }
 }
