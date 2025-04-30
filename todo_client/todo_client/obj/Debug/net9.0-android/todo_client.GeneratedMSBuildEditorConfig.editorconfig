@@ -12,73 +12,73 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = todo_client
-build_property.ProjectDir = C:\Users\User\Repos\Todo_app\todo_client\todo_client\
+build_property.ProjectDir = C:\Users\Veekey\Documents\Programming\Mobile Development\MAUI\Todo_app\todo_client\todo_client\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/User/Repos/Todo_app/todo_client/todo_client/AddTask.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/AddTask.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.AddTask.xaml
 build_metadata.AdditionalFiles.TargetPath = AddTask.xaml
 build_metadata.AdditionalFiles.RelativePath = AddTask.xaml
 
-[C:/Users/User/Repos/Todo_app/todo_client/todo_client/App.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/User/Repos/Todo_app/todo_client/todo_client/BottomTabBar.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/BottomTabBar.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.BottomTabBar.xaml
 build_metadata.AdditionalFiles.TargetPath = BottomTabBar.xaml
 build_metadata.AdditionalFiles.RelativePath = BottomTabBar.xaml
 
-[C:/Users/User/Repos/Todo_app/todo_client/todo_client/Completed.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/Completed.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.Completed.xaml
 build_metadata.AdditionalFiles.TargetPath = Completed.xaml
 build_metadata.AdditionalFiles.RelativePath = Completed.xaml
 
-[C:/Users/User/Repos/Todo_app/todo_client/todo_client/EditTask.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/EditTask.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.EditTask.xaml
 build_metadata.AdditionalFiles.TargetPath = EditTask.xaml
 build_metadata.AdditionalFiles.RelativePath = EditTask.xaml
 
-[C:/Users/User/Repos/Todo_app/todo_client/todo_client/Login.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/Login.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.Login.xaml
 build_metadata.AdditionalFiles.TargetPath = Login.xaml
 build_metadata.AdditionalFiles.RelativePath = Login.xaml
 
-[C:/Users/User/Repos/Todo_app/todo_client/todo_client/Profile.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/Profile.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.Profile.xaml
 build_metadata.AdditionalFiles.TargetPath = Profile.xaml
 build_metadata.AdditionalFiles.RelativePath = Profile.xaml
 
-[C:/Users/User/Repos/Todo_app/todo_client/todo_client/Register.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/Register.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.Register.xaml
 build_metadata.AdditionalFiles.TargetPath = Register.xaml
 build_metadata.AdditionalFiles.RelativePath = Register.xaml
 
-[C:/Users/User/Repos/Todo_app/todo_client/todo_client/Resources/Styles/Colors.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/User/Repos/Todo_app/todo_client/todo_client/Resources/Styles/Styles.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/User/Repos/Todo_app/todo_client/todo_client/Tasks.xaml]
+[C:/Users/Veekey/Documents/Programming/Mobile Development/MAUI/Todo_app/todo_client/todo_client/Tasks.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.Tasks.xaml
 build_metadata.AdditionalFiles.TargetPath = Tasks.xaml

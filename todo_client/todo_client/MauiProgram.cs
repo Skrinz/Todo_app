@@ -13,6 +13,13 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
+        Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("CursorColor", (handler, view) =>
+        {
+        #if __ANDROID__
+                    handler.PlatformView.TextCursorDrawable.SetTint(Android.Graphics.Color.Black);
+        #endif
+                });
+        
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
