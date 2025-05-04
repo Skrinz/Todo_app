@@ -7,13 +7,14 @@ public class Constants
 
     public static readonly string POSTS = "/posts";
     
-    //192.168.1.13
-    //10.16.199.202
-    
-    public static readonly string SERVERURL = "http://10.16.199.202:3000";
+    public static readonly string SERVERURL = "http://192.168.1.11:3000";
+    // User Endpoints
     public static readonly string REGISTER = "/users/register"; 
     public static readonly string LOGIN = "/users/login";
-    // public static readonly string CREATE_TASK = "/todos/";
-    // public static readonly string GET_TASK = "/todos/";
-    // public static readonly string PATCH_TASK = "/todos/";
+    // Task Endpoints
+    public static readonly string CREATE_TASK = "/todos/";
+    public static readonly string GET_TASKS = "/todos?userId=";
+    public static readonly string PATCH_TASK = "/todos/"; // Append {id}
+    public static readonly string DELETE_TASK = "/todos/"; // Append {id}
+
 }

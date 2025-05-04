@@ -23,7 +23,7 @@
                         FontSize="24"
                         VerticalOptions="Center"
                         HorizontalOptions="Start"
-                        Clicked="Button_OnClicked"
+                        Clicked="CancelButton_OnClicked"
                         Grid.Column="0"/>
                     
                     <Label Text="Edit"
@@ -79,6 +79,7 @@
                         FontSize="20"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
+                        Clicked="SaveButton_OnClicked"
                          />
 
                     <!-- Complete Button -->
@@ -91,6 +92,7 @@
                         FontSize="20"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
+                        Clicked="CompleteButton_OnClicked"
                     />
 
                     <!-- Delete Button -->
@@ -103,6 +105,7 @@
                         FontSize="20"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
+                        Clicked="DeleteButton_OnClicked"
                     />
                 </Grid>
         </Grid>

@@ -22,10 +22,11 @@ public partial class Login : ContentPage
 
     private async void SignIn_OnClicked(object? sender, EventArgs e)
     {
-        
+        //get the email and password text input
         var email = EmailEntry.Text?.Trim();
         var password = PasswordEntry.Text;
 
+        //check if the email or password is empty
         if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
         {
             await DisplayAlert("Error", "Please enter both email and password.", "OK");
@@ -43,7 +44,8 @@ public partial class Login : ContentPage
             await DisplayAlert("Host Unreachable!", "The URL host for ToDo cannot be reached. Please try again later!", "OK");
             return;
         }
-
+        
+        //connect with the server
         try
         {
             var (success, message, user) = await _apiService.LoginUser(email, password);

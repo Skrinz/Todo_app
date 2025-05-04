@@ -13,7 +13,7 @@ public class TaskList : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-    private int _id { get; set; }
+    private int _userId { get; set; }
     
     private String _title { get; set; }
     
@@ -21,10 +21,10 @@ public class TaskList : INotifyPropertyChanged
     
     private bool _completed { get; set; }
 
-    public int id
+    public int userId
     {
-        get { return _id; }
-        set { _id = value; OnPropertyChanged(nameof(id)); }
+        get { return _userId; }
+        set { _userId = value; OnPropertyChanged(nameof(userId)); }
     }
 
     public String title

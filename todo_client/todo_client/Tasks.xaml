@@ -46,7 +46,9 @@
                         BackgroundColor="White">
                         <!-- Checkbox -->
                         <CheckBox Grid.Column="0" Color="Black"
-                                  VerticalOptions="Center" HorizontalOptions="Center" />
+                                  VerticalOptions="Center" HorizontalOptions="Center"
+                                  IsChecked="{Binding completed}" 
+                                  CheckedChanged="OnCheckBoxChanged"/>
                         <!-- Task Title -->
                         <Label Grid.Column="1" Text="{Binding title}" 
                                FontSize="16" TextColor="Black" VerticalOptions="Center" Margin="10,0"/>
@@ -58,7 +60,11 @@
                             <RoundRectangle CornerRadius="5"/>
                           </Border.StrokeShape>
                           <Image Source="delete_icon.svg" VerticalOptions="Center" HorizontalOptions="Center"
-                                 HeightRequest="24" WidthRequest="24"/>
+                                 HeightRequest="24" WidthRequest="24">
+                            <Image.GestureRecognizers>
+                              <TapGestureRecognizer Tapped="OnDeleteTapped" CommandParameter="{Binding .}" />
+                            </Image.GestureRecognizers>
+                          </Image>
                         </Border>
                       </Grid>
                     </Border>

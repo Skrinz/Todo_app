@@ -1,185 +1,104 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System.Collections.ObjectModel;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace todo_client;
 
 public partial class Completed : ContentPage
 {
-    NetworkHelper networkHelper;
-    HttpClient client;
-    CancellationToken cts;
-    CancellationTokenSource cs = new CancellationTokenSource();
-    HttpResponseMessage response;
-    ObservableCollection<TaskList> tasks = new ObservableCollection<TaskList>();
-    
+    private readonly NetworkHelper networkHelper;
+    private readonly ApiService _apiService;
+    private ObservableCollection<TaskList> tasks = new ObservableCollection<TaskList>();
+
     public Completed()
     {
         InitializeComponent();
         NavigationPage.SetHasNavigationBar(this, false);
         NavigationPage.SetHasBackButton(this, false);
-        
+
         networkHelper = new NetworkHelper();
-        client = new HttpClient();
-        cts = cs.Token;
-        client.DefaultRequestHeaders.Accept.Clear();
-        client.MaxResponseContentBufferSize = 256000;
-        client.Timeout = TimeSpan.FromSeconds(3);
+        _apiService = new ApiService();
         completedLV.ItemsSource = tasks;
     }
-    
-    async protected override void OnAppearing()
+
+    protected override async void OnAppearing()
     {
         base.OnAppearing();
 
-        // Only load tasks if they haven't been loaded yet
         if (tasks.Count == 0)
         {
             activityIndicator.IsRunning = true;
-            // GET tasks only if needed
-            if (networkHelper.HasInternet())
-            {
-                if (await networkHelper.IsHostReachable())
-                {
-                    var uri = new Uri(Constants.URL + Constants.POSTS);
-                    response = await client.GetAsync(uri, cts);
-                
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var result = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-                        JObject jObject = new JObject();
-                        try
-                        {
-                            jObject = JObject.Parse(result);
-                            ReceivedResult(jObject);
-                        }
-                        catch (Exception)
-                        {
-                            JArray jA = JArray.Parse(result);
-                            jObject = JObject.Parse("{\"count\":" + jA.Count + ",\"data\":" + JsonConvert.SerializeObject(jA) + "}");
-                            ReceivedResult(jObject);
-                        }
-                    }
-                    else
-                    {
-                        await DisplayAlert("Error!", response.StatusCode.ToString(), "OK");
-                    }
-                }
-                else
-                {
-                    await DisplayAlert("Host Unreachable!", "The URL host for ToDo cannot be reached. Please try again later!", "OK");
-                }
-            }
-            else
-            {
-                await DisplayAlert("No Internet Connection!", "Please check your internet connection and try again!", "OK");
-            }
+            await LoadCompletedTasksAsync();
             activityIndicator.IsRunning = false;
         }
     }
-    
-    private void ReceivedResult(JObject jsonData)
+
+    private async Task LoadCompletedTasksAsync()
     {
-        tasks.Clear();
-        for (int x = 0; x < Convert.ToInt32(jsonData["count"]); x++)
+        if (!networkHelper.HasInternet())
         {
-            TaskList i = JsonConvert.DeserializeObject<TaskList>(jsonData["data"][x].ToString());
-            tasks.Add(i);
+            await DisplayAlert("No Internet", "Please check your internet connection.", "OK");
+            return;
         }
-        activityIndicator.IsRunning = false;
+
+        if (!await networkHelper.IsHostReachable())
+        {
+            await DisplayAlert("Host Unreachable", "Can't reach the server. Try again later.", "OK");
+            return;
+        }
+
+        try
+        {
+            var allTasks = await _apiService.GetTasksAsync(SessionManager.CurrentUser.Id); 
+            var completedTasks = allTasks.Where(t => t.completed).ToList();
+
+            tasks.Clear();
+            foreach (var task in completedTasks)
+                tasks.Add(task);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading completed tasks: {ex.Message}");
+            await DisplayAlert("Error", "Something went wrong while fetching tasks.", "OK");
+        }
     }
 
-    private void TasksLV_OnItemSelected(object? sender, SelectedItemChangedEventArgs e)
-    {
-        ((CollectionView)sender).SelectedItem = null;
-    }
-    
     private async void OnRefresh(object sender, EventArgs e)
     {
-        // Show a loading indicator
         activityIndicator.IsRunning = true;
-
-        // Refresh the tasks
-        await RefreshTasksAsync();
-
-        // Stop the refresh animation
+        await LoadCompletedTasksAsync();
         activityIndicator.IsRunning = false;
         refreshView.IsRefreshing = false;
-    }
-    
-    private async Task RefreshTasksAsync()
-    {
-        // Clear existing tasks if needed and fetch new data.
-        tasks.Clear();
-    
-        if (networkHelper.HasInternet())
-        {
-            if (await networkHelper.IsHostReachable())
-            {
-                var uri = new Uri(Constants.URL + Constants.POSTS);
-                response = await client.GetAsync(uri, cts);
-            
-                if (response.IsSuccessStatusCode)
-                {
-                    var result = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-                    JObject jObject = new JObject();
-                    try
-                    {
-                        jObject = JObject.Parse(result);
-                        ReceivedResult(jObject);
-                    }
-                    catch (Exception)
-                    {
-                        JArray jA = JArray.Parse(result);
-                        jObject = JObject.Parse("{\"count\":" + jA.Count + ",\"data\":" + JsonConvert.SerializeObject(jA) + "}");
-                        ReceivedResult(jObject);
-                    }
-                }
-                else
-                {
-                    await DisplayAlert("Error!", response.StatusCode.ToString(), "OK");
-                }
-            }
-            else
-            {
-                await DisplayAlert("Host Unreachable!", "The URL host for ToDo cannot be reached. Please try again later!", "OK");
-            }
-        }
-        else
-        {
-            await DisplayAlert("No Internet Connection!", "Please check your internet connection and try again!", "OK");
-        }
-    }
-
-    private void Delete_OnTapped(object? sender, TappedEventArgs e)
-    {
-        
     }
 
     private void CompletedLV_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
-        // Only proceed if there is a newly selected item
         if (e.CurrentSelection != null && e.CurrentSelection.Count > 0)
         {
-            // Optionally get the selected item:
             var selectedTask = e.CurrentSelection.FirstOrDefault() as TaskList;
-        
-            // Clear the selection so it doesn't fire again on deselection
+
             if (sender is CollectionView collectionView)
-            {
                 collectionView.SelectedItem = null;
+        }
+    }
+    
+    private async void OnDeleteTapped(object sender, EventArgs e)
+    {
+        if (sender is Image img && img.BindingContext is TaskList task)
+        {
+            bool confirm = await DisplayAlert("Delete Task", $"Are you sure you want to delete '{task.title}'?", "Yes", "No");
+            if (!confirm) return;
+
+            var response = await _apiService.DeleteTaskAsync(task.userId);
+
+            if (response)
+            {
+                tasks.Remove(task); // remove from observable collection
             }
-        
-            // Navigate to EditTask page
-            Navigation.PushAsync(new EditTask());
+            else
+            {
+                await DisplayAlert("Delete Failed", "Failed to delete the task.", "OK");
+            }
         }
     }
 }

@@ -55,7 +55,11 @@
                             <RoundRectangle CornerRadius="5"/>
                           </Border.StrokeShape>
                           <Image Source="delete_icon.svg" VerticalOptions="Center" HorizontalOptions="Center"
-                                 HeightRequest="24" WidthRequest="24"/>
+                                 HeightRequest="24" WidthRequest="24">
+                            <Image.GestureRecognizers>
+                              <TapGestureRecognizer Tapped="OnDeleteTapped" CommandParameter="{Binding .}" />
+                            </Image.GestureRecognizers>
+                            </Image>
                         </Border>
                       </Grid>
                     </Border>

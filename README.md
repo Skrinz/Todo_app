@@ -106,7 +106,7 @@ These instructions will help you set up and run the Todo App API on your local m
       ```
     - Response: Returns user details upon successful login.
 
-### Client Setup (Mobile App)
+### Client Setup
 
 1. Prerequisites:
     - Android SDK
