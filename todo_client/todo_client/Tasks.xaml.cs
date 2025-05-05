@@ -163,7 +163,7 @@ public partial class Tasks : ContentPage
                 {
                     // Update local state
                     task.completed = e.Value;
-                    // Don't show alert on success to avoid interrupting user experience
+                    RefreshTasksAsync();
                 }
             }
             catch (Exception ex)

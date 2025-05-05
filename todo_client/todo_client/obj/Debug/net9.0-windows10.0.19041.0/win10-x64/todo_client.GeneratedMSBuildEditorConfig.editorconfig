@@ -46,6 +46,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = todo_client.Completed.xaml
 build_metadata.AdditionalFiles.TargetPath = Completed.xaml
 build_metadata.AdditionalFiles.RelativePath = Completed.xaml
 
+[C:/Users/User/Repos/Todo_app/todo_client/todo_client/CompletedEditTask.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = todo_client.CompletedEditTask.xaml
+build_metadata.AdditionalFiles.TargetPath = CompletedEditTask.xaml
+build_metadata.AdditionalFiles.RelativePath = CompletedEditTask.xaml
+
 [C:/Users/User/Repos/Todo_app/todo_client/todo_client/EditTask.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = todo_client.EditTask.xaml

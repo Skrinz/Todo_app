@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace todo_client;
 
-public partial class EditTask : ContentPage
+public partial class CompletedEditTask : ContentPage
 {
-    private TaskList _taskToEdit;
-    private readonly ApiService _apiService = new();
+    private readonly TaskList _taskToEdit;
+    private readonly ApiService _apiService = new ApiService();
 
-    public EditTask(TaskList task)
+    public CompletedEditTask(TaskList task)
     {
         InitializeComponent();
         _taskToEdit = task;
@@ -17,6 +17,11 @@ public partial class EditTask : ContentPage
         // Populate the form with the task data
         TitleEntry.Text = _taskToEdit.title;
         DescEditor.Text = _taskToEdit.details;
+    }
+
+    private async void CancelButton_OnClicked(object? sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
     }
 
     private async void SaveButton_OnClicked(object? sender, EventArgs e)
@@ -61,9 +66,37 @@ public partial class EditTask : ContentPage
         }
     }
 
-    private async void CancelButton_OnClicked(object? sender, EventArgs e)
+    private async void IncompleteButton_OnClicked(object? sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        try
+        {
+            // Set the task to incomplete in the local model
+            _taskToEdit.completed = false;
+
+            // Create an update dictionary for the "completed" field
+            var updates = new Dictionary<string, object>
+            {
+                { "completed", false }  
+            };
+
+            bool success = await _apiService.UpdateTaskAsync(_taskToEdit.id, updates);
+
+            if (success)
+            {
+                await DisplayAlert("Success", "Task marked as incomplete.", "OK");
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                Console.WriteLine("[ERROR] Failed to mark task as incomplete");
+                await DisplayAlert("Error", "Failed to mark task as incomplete.", "OK");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[ERROR] Exception in IncompleteButton_OnClicked: {ex.Message}");
+            await DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
+        }
     }
 
     private async void DeleteButton_OnClicked(object? sender, EventArgs e)
@@ -81,39 +114,6 @@ public partial class EditTask : ContentPage
         else
         {
             await DisplayAlert("Error", "Failed to delete task.", "OK");
-        }
-    }
-    
-    private async void CompleteButton_OnClicked(object? sender, EventArgs e)
-    {
-        try
-        {
-            // Set the task to completed in the local model
-            _taskToEdit.completed = true;
-
-            // Create an update dictionary for the "completed" field
-            var updates = new Dictionary<string, object>
-            {
-                { "completed", true }  
-            };
-
-            bool success = await _apiService.UpdateTaskAsync(_taskToEdit.id, updates);
-
-            if (success)
-            {
-                await DisplayAlert("Success", "Task marked as completed.", "OK");
-                await Navigation.PopAsync();
-            }
-            else
-            {
-                Console.WriteLine("[ERROR] Failed to mark task as completed");
-                await DisplayAlert("Error", "Failed to mark task as completed.", "OK");
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"[ERROR] Exception in CompleteButton_OnClicked: {ex.Message}");
-            await DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
         }
     }
 }

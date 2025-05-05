@@ -7,7 +7,7 @@ namespace todo_client;
 public partial class Completed : ContentPage
 {
     private readonly NetworkHelper networkHelper;
-    private readonly ApiService _apiService;
+    private readonly ApiService _apiService = new ApiService();
     private ObservableCollection<TaskList> tasks = new ObservableCollection<TaskList>();
 
     public Completed()
@@ -17,7 +17,6 @@ public partial class Completed : ContentPage
         NavigationPage.SetHasBackButton(this, false);
 
         networkHelper = new NetworkHelper();
-        _apiService = new ApiService();
         completedLV.ItemsSource = tasks;
     }
 
@@ -25,42 +24,50 @@ public partial class Completed : ContentPage
     {
         base.OnAppearing();
 
-        if (tasks.Count == 0)
+        activityIndicator.IsRunning = true;
+
+        if (networkHelper.HasInternet())
         {
-            activityIndicator.IsRunning = true;
-            await LoadCompletedTasksAsync();
-            activityIndicator.IsRunning = false;
+            if (await networkHelper.IsHostReachable())
+            {
+                await LoadCompletedTasksAsync(); 
+            }
+            else
+            {
+                await DisplayAlert("Host Unreachable!", "The URL host for ToDo cannot be reached. Please try again later!", "OK");
+            }
         }
+        else
+        {
+            await DisplayAlert("No Internet Connection!", "Please check your internet connection and try again!", "OK");
+        }
+
+        activityIndicator.IsRunning = false;
     }
 
     private async Task LoadCompletedTasksAsync()
     {
-        if (!networkHelper.HasInternet())
-        {
-            await DisplayAlert("No Internet", "Please check your internet connection.", "OK");
-            return;
-        }
-
-        if (!await networkHelper.IsHostReachable())
-        {
-            await DisplayAlert("Host Unreachable", "Can't reach the server. Try again later.", "OK");
-            return;
-        }
-
         try
         {
-            var allTasks = await _apiService.GetTasksAsync(SessionManager.CurrentUser.Id); 
-            var completedTasks = allTasks.Where(t => t.completed).ToList();
+            //get the userId from the session manager
+            int userId = SessionManager.CurrentUser.Id;
+
+            var taskList = await _apiService.GetTasksAsync(userId);
 
             tasks.Clear();
-            foreach (var task in completedTasks)
+
+            foreach (var task in taskList.Where(t=>t.completed))
+            {
                 tasks.Add(task);
+            }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error loading completed tasks: {ex.Message}");
-            await DisplayAlert("Error", "Something went wrong while fetching tasks.", "OK");
+            Console.WriteLine($"Error loading tasks: {ex.Message}");
+            await DisplayAlert("Error", "Failed to load tasks.", "OK");
         }
+
+        activityIndicator.IsRunning = false;
     }
 
     private async void OnRefresh(object sender, EventArgs e)
@@ -73,12 +80,23 @@ public partial class Completed : ContentPage
 
     private void CompletedLV_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
+        // Only proceed if there is a newly selected item
         if (e.CurrentSelection != null && e.CurrentSelection.Count > 0)
         {
+            // Optionally get the selected item:
             var selectedTask = e.CurrentSelection.FirstOrDefault() as TaskList;
 
+            // Clear the selection so it doesn't fire again on deselection
             if (sender is CollectionView collectionView)
+            {
                 collectionView.SelectedItem = null;
+            }
+
+            // Navigate to EditTask page
+            if (selectedTask != null)
+            {
+                Navigation.PushAsync(new CompletedEditTask(selectedTask));
+            }
         }
     }
     
@@ -89,7 +107,7 @@ public partial class Completed : ContentPage
             bool confirm = await DisplayAlert("Delete Task", $"Are you sure you want to delete '{task.title}'?", "Yes", "No");
             if (!confirm) return;
 
-            var response = await _apiService.DeleteTaskAsync(task.userId);
+            var response = await _apiService.DeleteTaskAsync(task.id);
 
             if (response)
             {

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="todo_client.CompletedEditTask"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    
+    <ContentPage.Content>
+        <Grid 
+            BackgroundColor="#101825" RowDefinitions="Auto,*"
+            AbsoluteLayout.LayoutFlags="All"
+            AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    
+            <!-- Header Bar -->
+            <Grid BackgroundColor="#a4a757" HeightRequest="50" Grid.Row="0">
+                <Grid
+                    ColumnDefinitions="Auto,*"
+                    VerticalOptions="Center">
+                    <Button
+                        Text="←" 
+                        TextColor="White"
+                        BackgroundColor="Transparent"
+                        FontSize="24"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        Clicked="CancelButton_OnClicked"
+                        Grid.Column="0"/>
+                    
+                    <Label Text="Edit Completed Task"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="White"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"/>
+                </Grid>
+            </Grid>
+                
+            <Grid Padding="16"
+                  RowSpacing="5"
+                  RowDefinitions="Auto,*,Auto,Auto,Auto"
+                  ColumnDefinitions="*"
+                  BackgroundColor="#101825"
+                  Grid.Row="1">
+            
+                    <!-- Title Entry -->
+                    <Entry x:Name="TitleEntry"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       FontSize="36"
+                       FontAttributes="Bold"
+                       Placeholder="Title"
+                       PlaceholderColor="#a4adb6"
+                       TextColor="White"
+                       BackgroundColor="Transparent"
+                       HorizontalTextAlignment="Start"
+                       VerticalTextAlignment="End" />
+
+                    <!-- Description Editor -->
+                    <Editor x:Name="DescEditor"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        FontSize="24"
+                        FontAttributes="None"
+                        Placeholder="Description"
+                        PlaceholderColor="#a4adb6"
+                        TextColor="White"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start" />
+
+                    <!-- Update Button -->
+                    <Button Text="Update"
+                        FontAttributes="Bold"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        BackgroundColor="#569fe8"
+                        TextColor="White"
+                        FontSize="20"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        Clicked="SaveButton_OnClicked"
+                         />
+
+                    <!-- Incomplete Button (Changed from Complete to Incomplete) -->
+                    <Button Text="Mark as Incomplete"
+                        FontAttributes="Bold"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        BackgroundColor="#f97316" 
+                        TextColor="White"
+                        FontSize="20"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        Clicked="IncompleteButton_OnClicked"
+                    />
+
+                    <!-- Delete Button -->
+                    <Button Text="Delete"
+                        FontAttributes="Bold"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        BackgroundColor="#fe706d"
+                        TextColor="White"
+                        FontSize="20"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        Clicked="DeleteButton_OnClicked"
+                    />
+                </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
