@@ -5,7 +5,6 @@ namespace todo_client;
 
 public class TaskList : INotifyPropertyChanged
 {
-    // Idk what this does, but it's important
     public event PropertyChangedEventHandler PropertyChanged;
 
     protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = "")
@@ -13,7 +12,9 @@ public class TaskList : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-    private int _userId { get; set; }
+    private int _id { get; set; }
+
+    private int _userId { get; set;}
     
     private String _title { get; set; }
     
@@ -21,10 +22,15 @@ public class TaskList : INotifyPropertyChanged
     
     private bool _completed { get; set; }
 
+    public int id
+    {
+        get { return _id; }
+        set { _id = value; OnPropertyChanged(nameof(id)); }
+    }
     public int userId
     {
         get { return _userId; }
-        set { _userId = value; OnPropertyChanged(nameof(userId)); }
+        set { _userId = value; OnPropertyChanged(nameof(_userId)); }
     }
 
     public String title

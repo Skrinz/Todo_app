@@ -16,39 +16,33 @@ public partial class Tasks : ContentPage
         InitializeComponent();
         NavigationPage.SetHasNavigationBar(this, false);
         NavigationPage.SetHasBackButton(this, false);
-
         networkHelper = new NetworkHelper();
         tasksLV.ItemsSource = tasks;
     }
 
-    async protected override void OnAppearing()
+    protected override async void OnAppearing()
     {
         base.OnAppearing();
 
-        // Only load tasks if they haven't been loaded yet
-        if (tasks.Count == 0)
-        {
-            activityIndicator.IsRunning = true;
+        activityIndicator.IsRunning = true;
 
-            // GET tasks only if needed
-            if (networkHelper.HasInternet())
+        if (networkHelper.HasInternet())
+        {
+            if (await networkHelper.IsHostReachable())
             {
-                if (await networkHelper.IsHostReachable())
-                {
-                    await LoadTasksAsync();
-                }
-                else
-                {
-                    await DisplayAlert("Host Unreachable!", "The URL host for ToDo cannot be reached. Please try again later!", "OK");
-                }
+                await LoadTasksAsync(); 
             }
             else
             {
-                await DisplayAlert("No Internet Connection!", "Please check your internet connection and try again!", "OK");
+                await DisplayAlert("Host Unreachable!", "The URL host for ToDo cannot be reached. Please try again later!", "OK");
             }
-
-            activityIndicator.IsRunning = false;
         }
+        else
+        {
+            await DisplayAlert("No Internet Connection!", "Please check your internet connection and try again!", "OK");
+        }
+
+        activityIndicator.IsRunning = false;
     }
 
     private async Task LoadTasksAsync()
@@ -139,20 +133,26 @@ public partial class Tasks : ContentPage
     {
         if (sender is CheckBox checkbox && checkbox.BindingContext is TaskList task)
         {
+            Console.WriteLine($"[DEBUG] Test Data change: {e.Value}");
             var updates = new Dictionary<string, object>
             {
                 { "completed", e.Value }
             };
-
-            bool success = await _apiService.UpdateTaskAsync(task.userId, updates);
+            Console.WriteLine($"[DEBUG] Task ID: {task.id}");
+            Console.WriteLine($"[DEBUG] Patch task: {updates}");
+            
+            bool success = await _apiService.UpdateTaskAsync(task.id, updates);
             if (!success)
             {
+                checkbox.CheckedChanged -= OnCheckBoxChanged;
                 await DisplayAlert("Update Failed", "Could not update task completion status.", "OK");
                 checkbox.IsChecked = !e.Value; // revert if failed
+                checkbox.CheckedChanged += OnCheckBoxChanged;
             }
             else
             {
                 task.completed = e.Value; // update local state
+                await DisplayAlert("Success", $"Task marked as {(e.Value ? "completed" : "incomplete")}.", "OK");
             }
         }
     }
@@ -164,7 +164,7 @@ public partial class Tasks : ContentPage
             bool confirm = await DisplayAlert("Delete Task", $"Are you sure you want to delete '{task.title}'?", "Yes", "No");
             if (!confirm) return;
 
-            var response = await _apiService.DeleteTaskAsync(task.userId);
+            var response = await _apiService.DeleteTaskAsync(task.id);
 
             if (response)
             {

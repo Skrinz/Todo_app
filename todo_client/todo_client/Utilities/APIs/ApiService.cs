@@ -226,7 +226,7 @@ namespace todo_client
                 var json = JsonSerializer.Serialize(updates);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var url = $"{Constants.SERVERURL}{Constants.PATCH_TASK}{taskId}";
+                var url = $"{Constants.SERVERURL}/todos/{taskId}";
                 var request = new HttpRequestMessage(HttpMethod.Patch, url) { Content = content };
 
                 var response = await _httpClient.SendAsync(request);

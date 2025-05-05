@@ -36,7 +36,7 @@ public partial class EditTask : ContentPage
             updates["title"] = newTitle;
 
         if (newDesc != _taskToEdit.details)
-            updates["description"] = newDesc;
+            updates["details"] = newDesc;
 
         if (updates.Count == 0)
         {
@@ -44,7 +44,7 @@ public partial class EditTask : ContentPage
             return;
         }
 
-        bool success = await _apiService.UpdateTaskAsync(_taskToEdit.userId, updates);
+        bool success = await _apiService.UpdateTaskAsync(_taskToEdit.id, updates);
 
         if (success)
         {
