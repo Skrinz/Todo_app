@@ -56,7 +56,7 @@ public partial class Tasks : ContentPage
 
             tasks.Clear();
 
-            foreach (var task in taskList)
+            foreach (var task in taskList.Where(t=>!t.completed))
             {
                 tasks.Add(task);
             }
@@ -133,26 +133,50 @@ public partial class Tasks : ContentPage
     {
         if (sender is CheckBox checkbox && checkbox.BindingContext is TaskList task)
         {
-            Console.WriteLine($"[DEBUG] Test Data change: {e.Value}");
-            var updates = new Dictionary<string, object>
+            try
             {
-                { "completed", e.Value }
-            };
-            Console.WriteLine($"[DEBUG] Task ID: {task.id}");
-            Console.WriteLine($"[DEBUG] Patch task: {updates}");
-            
-            bool success = await _apiService.UpdateTaskAsync(task.id, updates);
-            if (!success)
-            {
+                bool newValue = e.Value;
                 checkbox.CheckedChanged -= OnCheckBoxChanged;
-                await DisplayAlert("Update Failed", "Could not update task completion status.", "OK");
-                checkbox.IsChecked = !e.Value; // revert if failed
-                checkbox.CheckedChanged += OnCheckBoxChanged;
+            
+                Console.WriteLine($"[DEBUG] Task completion change: {e.Value}");
+            
+                var updates = new Dictionary<string, object>
+                {
+                    { "completed", newValue }
+                };
+            
+                Console.WriteLine($"[DEBUG] Task ID: {task.id}");
+                Console.WriteLine($"[DEBUG] Updates Dictionary: completed = {updates["completed"]}");
+
+                // Show loading indicator
+                activityIndicator.IsRunning = true;
+            
+                bool success = await _apiService.UpdateTaskAsync(task.id, updates);
+            
+                if (!success)
+                {
+                    // Revert checkbox state if update failed
+                    checkbox.IsChecked = !e.Value;
+                    await DisplayAlert("Update Failed", "Could not update task completion status.", "OK");
+                }
+                else
+                {
+                    // Update local state
+                    task.completed = e.Value;
+                    // Don't show alert on success to avoid interrupting user experience
+                }
             }
-            else
+            catch (Exception ex)
             {
-                task.completed = e.Value; // update local state
-                await DisplayAlert("Success", $"Task marked as {(e.Value ? "completed" : "incomplete")}.", "OK");
+                Console.WriteLine($"Error updating task: {ex.Message}");
+                checkbox.IsChecked = !e.Value; // Revert on exception
+                await DisplayAlert("Error", "An error occurred while updating the task.", "OK");
+            }
+            finally
+            {
+                // Always re-attach the event handler and hide loading indicator
+                checkbox.CheckedChanged += OnCheckBoxChanged;
+                activityIndicator.IsRunning = false;
             }
         }
     }

@@ -8,7 +8,7 @@ router.post("/", todoValidation, validate, todos.createtodoController);
 //display all todos
 router.get("/", todos.gettodosController);
 //Update portion of a todo
-router.patch("/:id", todoValidation, validate, todos.patchtodoController);
+router.patch("/:id", todos.patchtodoController);
 //Delete a todo
 router.delete("/:id", todos.deletetodoController);
 

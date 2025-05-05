@@ -219,22 +219,38 @@ namespace todo_client
         }
 
         // Patch task
+        // Fixed UpdateTaskAsync method using PatchAsync
         public async Task<bool> UpdateTaskAsync(int taskId, Dictionary<string, object> updates)
         {
             try
             {
                 var json = JsonSerializer.Serialize(updates);
+                Console.WriteLine($"[DEBUG] Updates JSON: {json}");
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
+                Console.WriteLine($"[DEBUG] Updates TaskId: {taskId}");
 
-                var url = $"{Constants.SERVERURL}/todos/{taskId}";
-                var request = new HttpRequestMessage(HttpMethod.Patch, url) { Content = content };
-
-                var response = await _httpClient.SendAsync(request);
+                var url = $"{Constants.SERVERURL}{Constants.PATCH_TASK}{taskId}";
+                Console.WriteLine($"[DEBUG] Request URL: {url}");
+        
+                var response = await _httpClient.PatchAsync(url, content);
+        
+                if (!response.IsSuccessStatusCode)
+                {
+                    var errorContent = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"[ERROR] Update failed with status code: {response.StatusCode}");
+                    Console.WriteLine($"[ERROR] Error response: {errorContent}");
+                }
+                else
+                {
+                    Console.WriteLine($"[DEBUG] Update successful with status code: {response.StatusCode}");
+                }
+        
                 return response.IsSuccessStatusCode;
             }
             catch (Exception ex)
-            {
-                Console.WriteLine($"Error updating task: {ex.Message}");
+            {   
+                Console.WriteLine($"[ERROR] Exception in UpdateTaskAsync: {ex.Message}");
+                Console.WriteLine($"[ERROR] Stack trace: {ex.StackTrace}");
                 return false;
             }
         }

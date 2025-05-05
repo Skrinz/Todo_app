@@ -71,7 +71,7 @@ public partial class EditTask : ContentPage
         bool confirm = await DisplayAlert("Delete Task", $"Are you sure you want to delete '{_taskToEdit.title}'?", "Yes", "No");
         if (!confirm) return;
 
-        bool response = await _apiService.DeleteTaskAsync(_taskToEdit.userId);
+        bool response = await _apiService.DeleteTaskAsync(_taskToEdit.id);
 
         if (response)
         {
@@ -86,25 +86,34 @@ public partial class EditTask : ContentPage
     
     private async void CompleteButton_OnClicked(object? sender, EventArgs e)
     {
-        // Set the task to completed
-        _taskToEdit.completed = true;
-
-        // Create an update dictionary for the "completed" field
-        var updates = new Dictionary<string, object>
+        try
         {
-            { "completed", true }
-        };
+            // Set the task to completed in the local model
+            _taskToEdit.completed = true;
 
-        bool success = await _apiService.UpdateTaskAsync(_taskToEdit.userId, updates);
+            // Create an update dictionary for the "completed" field
+            var updates = new Dictionary<string, object>
+            {
+                { "completed", true }  
+            };
 
-        if (success)
-        {
-            await DisplayAlert("Success", "Task marked as completed.", "OK");
-            await Navigation.PopAsync();
+            bool success = await _apiService.UpdateTaskAsync(_taskToEdit.id, updates);
+
+            if (success)
+            {
+                await DisplayAlert("Success", "Task marked as completed.", "OK");
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                Console.WriteLine("[ERROR] Failed to mark task as completed");
+                await DisplayAlert("Error", "Failed to mark task as completed.", "OK");
+            }
         }
-        else
+        catch (Exception ex)
         {
-            await DisplayAlert("Error", "Failed to mark task as completed.", "OK");
+            Console.WriteLine($"[ERROR] Exception in CompleteButton_OnClicked: {ex.Message}");
+            await DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
         }
     }
 }
