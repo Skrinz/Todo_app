@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("todo_client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+a36b745087d51a3e70aec60d9da376b5a4dc7420")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f2d99946dbd8996b926a943c35c126734376589c")]
 [assembly: System.Reflection.AssemblyProductAttribute("todo_client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("todo_client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
