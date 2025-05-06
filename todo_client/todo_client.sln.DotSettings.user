@@ -4,4 +4,6 @@
 	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/CustomBuildToolPath/@EntryValue">
 		C:\Program Files\dotnet\sdk\9.0.203\MSBuild.dll
 	</s:String>
+	<s:String x:Key="/Default/Environment/Hierarchy/Build/SolBuilderDuo/CustomGlobalProperties/=AndroidSDKDirectory/@EntryIndexedValue">C:\Users\Veekey\AppData\Local\Android\Sdk</s:String>
+	<s:String x:Key="/Default/Environment/Hierarchy/Build/SolBuilderDuo/CustomGlobalProperties/=JavaSDKDirectory/@EntryIndexedValue">C:\Program Files\Java\jdk-17</s:String>
 </wpf:ResourceDictionary>

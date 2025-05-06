@@ -21,10 +21,10 @@
         <Nullable>enable</Nullable>
 
         <!-- Display name -->
-        <ApplicationTitle>todo_client</ApplicationTitle>
+        <ApplicationTitle>ToDo</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.todo_client</ApplicationId>
+        <ApplicationId>ToDo</ApplicationId>
 
         <!-- Versions -->
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
