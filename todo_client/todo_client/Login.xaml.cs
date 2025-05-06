@@ -1,4 +1,5 @@
 ﻿namespace todo_client;
+using Newtonsoft.Json;
 
 public partial class Login : ContentPage
 {
@@ -52,7 +53,13 @@ public partial class Login : ContentPage
 
             if (success && user != null)
             {
+                //set the session manager
                 SessionManager.SetUser(user);
+                //set the preferences to persist user details memory in the app
+                string userJson = JsonConvert.SerializeObject(user);
+                Preferences.Set("IsLoggedIn", true);
+                Preferences.Set("User", userJson);
+                
                 Console.WriteLine($"User ID: {SessionManager.CurrentUser.Id}");
                 await DisplayAlert("Success", "Login successful!", "OK");
                 Application.Current.Windows.FirstOrDefault().Page = new NavigationPage(new BottomTabBar());

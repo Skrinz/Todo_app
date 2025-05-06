@@ -1,7 +1,5 @@
 ﻿using System.Collections.ObjectModel;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace todo_client;
 
@@ -18,12 +16,13 @@ public partial class Tasks : ContentPage
         NavigationPage.SetHasBackButton(this, false);
         networkHelper = new NetworkHelper();
         tasksLV.ItemsSource = tasks;
+        
     }
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-
+        
         activityIndicator.IsRunning = true;
 
         if (networkHelper.HasInternet())

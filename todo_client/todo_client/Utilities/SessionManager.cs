@@ -15,11 +15,5 @@
         {
             CurrentUser = null;
         }
-
-        // Check if a user is logged in
-        public static bool IsUserLoggedIn()
-        {
-            return CurrentUser != null;
-        }
     }
 }

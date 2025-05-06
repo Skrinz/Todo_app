@@ -219,7 +219,6 @@ namespace todo_client
         }
 
         // Patch task
-        // Fixed UpdateTaskAsync method using PatchAsync
         public async Task<bool> UpdateTaskAsync(int taskId, Dictionary<string, object> updates)
         {
             try
