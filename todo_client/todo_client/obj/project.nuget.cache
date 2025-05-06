@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Byu0SITY5Xk=",
+  "dgSpecHash": "3UQMEMLNFJU=",
   "success": true,
   "projectFilePath": "C:\\Users\\Veekey\\Documents\\Programming\\Mobile Development\\MAUI\\Todo_app\\todo_client\\todo_client\\todo_client.csproj",
   "expectedPackageFiles": [
@@ -124,6 +124,7 @@
     "C:\\Users\\Veekey\\.nuget\\packages\\xamarin.kotlinx.serialization.core.jvm\\1.7.1.3\\xamarin.kotlinx.serialization.core.jvm.1.7.1.3.nupkg.sha512",
     "C:\\Users\\Veekey\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.200\\microsoft.net.sdk.compilers.toolset.9.0.200.nupkg.sha512",
     "C:\\Users\\Veekey\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.200\\microsoft.net.sdk.compilers.toolset.9.0.200.nupkg.sha512",
+    "C:\\Users\\Veekey\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-bionic-arm64\\9.0.2\\microsoft.netcore.app.runtime.linux-bionic-arm64.9.0.2.nupkg.sha512",
     "C:\\Users\\Veekey\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
   ],
   "logs": []
