@@ -2,7 +2,9 @@
 
 public class Constants
 {
-    public static readonly string SERVERURL = "http://10.16.199.202:3000";
+    
+    //"http://10.16.199.202:3000
+    public static readonly string SERVERURL = "http://todoappcv.dcism.org";
     // User Endpoints
     public static readonly string REGISTER = "/users/register"; 
     public static readonly string LOGIN = "/users/login";
