@@ -124,11 +124,8 @@ These instructions will help you set up and run the Todo App API on your local m
    Expected output:
    ```
    maui
-   maui-tizen
-   maui-android
-   android
    ```
-   If workloads are missing:
+   If workload are missing:
    ```bash
    dotnet workload install maui
    ```
